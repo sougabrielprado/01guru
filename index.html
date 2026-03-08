@@ -1,268 +1,30 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oráculo Premium | Vault de Ativos de Conversão</title>
+<section class="py-20 star-field">
+  <div class="container mx-auto px-6">
+    <h2 class="font-heading text-4xl text-center mb-16 gold-shimmer">Escolha seu Nível de Alinhamento</h2>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-card p-8 rounded-xl border border-border opacity-70">
+        <h3 class="font-heading text-2xl mb-4">Análise Flash</h3>
+        <p class="text-muted-foreground mb-6 text-sm">Um vislumbre rápido do seu momento atual.</p>
+        <div class="text-3xl font-bold mb-6">R$ 497</div>
+        <button class="w-full py-3 border border-primary text-primary rounded-lg">Começar Agora</button>
+      </div>
 
-    <style>
-        :root {
-            --azul-royal: #002366;
-            --dourado: #F7E7CE;
-            --verde-roi: #50C878;
-            --branco-neve: #FFFAFA;
-            --cinza-grafite: #36454F;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa;
-            color: var(--cinza-grafite);
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
+      <div class="bg-secondary p-8 rounded-xl border-2 border-primary transform scale-105 shadow-2xl relative">
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-bold">MAIS SOLICITADO</div>
+        <h3 class="font-heading text-2xl mb-4 text-primary">Mapa de Execução 70k</h3>
+        <p class="text-foreground mb-6 text-sm">O plano mestre para os próximos 40 dias de tráfego e copy.</p>
+        <div class="text-4xl font-bold mb-2">R$ 2.400</div>
+        <p class="text-xs text-primary mb-6">Frequência Védica da Prosperidade (24)</p>
+        <button class="w-full py-4 bg-primary text-primary-foreground rounded-lg font-bold shadow-lg hover:brightness-110 transition-all">GARANTIR MINHA VAGA</button>
+      </div>
 
-        .sales-container {
-            width: 100%;
-            max-width: 800px;
-            background: #fff;
-            border-top: 6px solid var(--azul-royal);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
-            border-radius: 8px;
-            overflow: hidden;
-            margin: 40px 20px;
-        }
-
-        .header-section {
-            background-color: var(--azul-royal);
-            color: var(--branco-neve);
-            padding: 50px 40px;
-            text-align: center;
-            position: relative;
-        }
-
-        /* O Dourado Jumaani para atrair a venda */
-        .header-section::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background-color: var(--dourado);
-        }
-
-        .tag-premium {
-            display: inline-block;
-            background: rgba(247, 231, 206, 0.2);
-            color: var(--dourado);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5em;
-            margin: 0 0 15px 0;
-            line-height: 1.2;
-        }
-
-        .sub-headline {
-            font-size: 1.15em;
-            color: #d1d5db;
-            font-weight: 400;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.5;
-        }
-
-        .content-section {
-            padding: 50px 40px;
-        }
-
-        /* Simulação do Print - O Produto Tangível */
-        .mockup-preview {
-            background-color: #f3f4f6;
-            border: 1px dashed #cbd5e1;
-            border-radius: 8px;
-            padding: 30px;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-
-        .mockup-preview p {
-            color: #64748b;
-            font-size: 0.9em;
-            font-weight: 500;
-        }
-
-        .mockup-grid {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .mockup-icon {
-            width: 60px;
-            height: 60px;
-            background-color: #fff;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5em;
-            border: 2px solid var(--azul-royal);
-        }
-
-        .benefits-grid {
-            margin-bottom: 40px;
-        }
-
-        .benefit-item {
-            margin-bottom: 20px;
-            padding-left: 35px;
-            position: relative;
-        }
-
-        .benefit-item::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            top: -2px;
-            color: var(--verde-roi);
-            font-size: 1.4em;
-            font-weight: bold;
-        }
-
-        .benefit-title {
-            font-weight: 700;
-            color: var(--azul-royal);
-            font-size: 1.1em;
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .checkout-box {
-            background-color: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 30px;
-            text-align: center;
-        }
-
-        .price-strike {
-            text-decoration: line-through;
-            color: #94a3b8;
-            font-size: 1.1em;
-        }
-
-        .price-final {
-            font-size: 3em;
-            color: var(--azul-royal);
-            font-weight: 700;
-            font-family: 'Playfair Display', serif;
-            margin: 10px 0;
-            line-height: 1;
-        }
-
-        .cta-btn {
-            display: block;
-            width: 100%;
-            padding: 20px;
-            background-color: var(--verde-roi);
-            color: #fff;
-            text-transform: uppercase;
-            font-weight: 700;
-            font-size: 1.2em;
-            text-decoration: none;
-            border-radius: 6px;
-            margin-top: 20px;
-            box-shadow: 0 10px 20px rgba(80, 200, 120, 0.2);
-            transition: 0.3s;
-        }
-
-        .cta-btn:hover {
-            background-color: #3da85f;
-            transform: translateY(-2px);
-            box-shadow: 0 12px 25px rgba(80, 200, 120, 0.3);
-        }
-
-        .guarantee {
-            display: block;
-            margin-top: 15px;
-            font-size: 0.85em;
-            color: #64748b;
-        }
-
-        @media (max-width: 600px) {
-            .header-section, .content-section { padding: 30px 20px; }
-            h1 { font-size: 2em; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="sales-container">
-        
-        <div class="header-section">
-            <span class="tag-premium">Oráculo Premium Assets</span>
-            <h1>O Vault de Ícones Flat 2.0</h1>
-            <p class="sub-headline">O pacote exato de ativos visuais que separa Landing Pages amadoras de ecossistemas que faturam múltiplos 6 dígitos.</p>
-        </div>
-
-        <div class="content-section">
-            
-            <div class="mockup-preview">
-                <p>Preview do Arsenal de Alta Conversão (SVG e PNG)</p>
-                <div class="mockup-grid">
-                    <div class="mockup-icon" style="border-color: #50C878;">📈</div>
-                    <div class="mockup-icon" style="border-color: #F7E7CE;">🎯</div>
-                    <div class="mockup-icon" style="border-color: #002366;">🛡️</div>
-                    <div class="mockup-icon" style="border-color: #50C878;">🚀</div>
-                </div>
-            </div>
-
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <span class="benefit-title">Estética de Elite (Flat 2.0)</span>
-                    Abandone ícones saturados e gratuitos. Transmita autoridade de nível C-Level instantânea no seu site, apresentações e anúncios.
-                </div>
-                <div class="benefit-item">
-                    <span class="benefit-title">Arquivos Fonte em SVG & PNG</span>
-                    Totalmente editáveis. Escale para qualquer tamanho sem perder 1% da qualidade. O design não quebra, sua autoridade não cai.
-                </div>
-                <div class="benefit-item">
-                    <span class="benefit-title">Redução de Carga Cognitiva</span>
-                    Ícones vetorizados desenhados especificamente para guiar o olho do seu lead direto para o botão de checkout.
-                </div>
-            </div>
-
-            <div class="checkout-box">
-                <div class="price-strike">Valor do Pacote Individual: R$ 397,00</div>
-                <div class="price-final">R$ 97,00</div>
-                <p style="margin:0; color:#64748b;">Acesso vitalício imediato. Pagamento único.</p>
-                
-                <a href="#LINK_DA_KIWIFY_AQUI" class="cta-btn">Baixar o Vault de Ativos Agora</a>
-                <span class="guarantee">🔒 Download Seguro • Entrega via E-mail instantânea</span>
-            </div>
-
-        </div>
+      <div class="bg-card p-8 rounded-xl border border-border">
+        <h3 class="font-heading text-2xl mb-4">Mentoria Platinum 1M</h3>
+        <p class="text-muted-foreground mb-6 text-sm">Acompanhamento individual até o seu primeiro milhão em Junho/2026.</p>
+        <div class="text-3xl font-bold mb-6 text-muted-foreground italic">Consultoria Sob Medida</div>
+        <button class="w-full py-3 border border-muted text-muted-foreground rounded-lg cursor-not-allowed">LISTA DE ESPERA</button>
+      </div>
     </div>
-
-</body>
-</html>
+  </div>
+</section>
