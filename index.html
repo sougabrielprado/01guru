@@ -51,9 +51,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            /* Paleta Oráculo Premium / Engenharia de Dados */
             --black-pure: #000000;
             --black-soft: #050505;
             --navy-base: #0A1128;
@@ -92,7 +92,6 @@
             border-bottom: 1px solid var(--gold-dark); padding-bottom: 5px;
         }
 
-        /* --- SELETOR DE IDIOMA FLUTUANTE --- */
         .lang-switcher {
             position: fixed;
             top: 30px;
@@ -122,7 +121,6 @@
         .lang-btn:hover { color: var(--white-pure); }
         .lang-btn.active { color: var(--black-pure); background: var(--gold-light); }
 
-        /* --- HEADER / HERO --- */
         .hero {
             position: relative; min-height: 90vh; display: flex; align-items: center; justify-content: center;
             background: radial-gradient(circle at 50% 10%, var(--navy-light) 0%, var(--navy-base) 40%, var(--black-pure) 80%);
@@ -143,7 +141,6 @@
         .stat-item h4 { font-size: 2.5rem; color: var(--gold-light); font-weight: 900; margin-bottom: 5px; }
         .stat-item p { font-size: 0.85rem; color: var(--gray-medium); text-transform: uppercase; letter-spacing: 1px; }
 
-        /* --- BOTÕES --- */
         .cta-primary {
             display: inline-block; background: var(--gold-light); color: var(--black-pure);
             text-decoration: none; padding: 1.25rem 3.5rem; font-weight: 800; font-size: 1rem;
@@ -160,7 +157,6 @@
         }
         .cta-outline:hover { background: rgba(212,175,55,0.1); border-color: var(--gold-light); }
 
-        /* --- SERVIÇOS --- */
         .section-services { padding: var(--spacing-section) 0; background-color: var(--black-soft); }
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 4rem; }
         .service-card {
@@ -182,7 +178,6 @@
         .price-currency { font-size: 1.2rem; color: var(--gold-light); font-weight: 700; }
         .price-new { font-size: 3rem; font-weight: 900; color: var(--white-pure); letter-spacing: -1px; }
 
-        /* --- CONSCIÊNCIA COLETIVA (O MECANISMO) --- */
         .section-mechanism { padding: var(--spacing-section) 0; background: var(--black-pure); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
         .mechanism-container { max-width: 900px; margin: 0 auto; text-align: center; }
         
@@ -207,7 +202,6 @@
 
         .highlight-gold { color: var(--gold-light); font-weight: 600; }
 
-        /* --- FAQ --- */
         .section-faq { padding: var(--spacing-section) 0; background: var(--black-soft); }
         .faq-item { border: 1px solid var(--border-subtle); border-radius: 8px; margin-bottom: 1rem; background: var(--navy-base); overflow: hidden; }
         .faq-question { padding: 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.1rem; font-weight: 600; color: var(--white-pure); transition: background 0.3s; }
@@ -217,7 +211,6 @@
         .faq-item.active .faq-answer { padding: 0 1.5rem 1.5rem 1.5rem; max-height: 200px; }
         .faq-item.active .faq-icon { transform: rotate(45deg); }
 
-        /* --- FOOTER LINKS --- */
         .footer-links {
             display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem;
         }
@@ -234,8 +227,9 @@
             .lang-switcher { top: 15px; right: 15px; }
         }
     </style>
-    <script type="text/javascript">!function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y)}(window, document, "clarity", "script", "vt032ja20b");</script>
-    <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '25792713553718904');fbq('track', 'PageView');</script>
+    
+    <script type="text/javascript" async src="https://www.clarity.ms/tag/vt032ja20b"></script>
+    <script async>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init', '25792713553718904');fbq('track', 'PageView');</script>
     <script src="https://analytics.ahrefs.com/analytics.js" data-key="CcXbzC034VcQn9vKRQ+wxw" async></script>
 </head>
 
@@ -248,7 +242,7 @@
 
     <header class="hero">
         <div class="container hero-content">
-            <img src="logo.png" alt="Oráculo Premium" class="main-logo" onerror="this.style.display='none'">
+            <img src="logo.png" alt="Oráculo Premium" class="main-logo" fetchpriority="high" loading="eager" onerror="this.style.display='none'">
             
             <h1 class="hero-title">
                 <span class="i18n" data-pt="ORÁCULO" data-en="PREMIUM">ORÁCULO</span>
@@ -411,7 +405,7 @@
                 </svg>
                 <span class="i18n" data-pt="Política de Privacidade" data-en="Privacy Policy">Política de Privacidade</span>
             </a>
-            <a href="public_pgp_key.asc" class="footer-link" download="gabriel_prado_public_pgp.asc">
+            <a href="public_pg_key.asc" class="footer-link" download="gabriel_prado_public_pgp.asc">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
                     <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
@@ -457,7 +451,7 @@
             }
         });
     </script>
-       
+        
     <style>body{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}</style>
     <script>
     !function(){document.addEventListener("contextmenu",function(e){e.preventDefault()}),document.onkeydown=function(e){return 123!=e.keyCode&&(!e.ctrlKey||!e.shiftKey||73!=e.keyCode&&67!=e.keyCode&&74!=e.keyCode)&&(!e.ctrlKey||85!=e.keyCode&&67!=e.keyCode&&80!=e.keyCode&&83!=e.keyCode)&&void 0},document.addEventListener("dragstart",function(e){e.preventDefault()})}();
