@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Seguro | Oráculo Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black-pure: #000000;
+            --black-soft: #050505;
+            --navy-base: #0A1128;
+            --navy-light: #152243;
+            --gold-light: #D4AF37;
+            --gray-light: #E0E0E0;
+            --gray-medium: #888888;
+            --white-pure: #FFFFFF;
+            --border-subtle: rgba(255, 255, 255, 0.08);
+            --border-gold: rgba(212, 175, 55, 0.3);
+            --success-green: #00C853;
+            --font-main: 'Inter', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--black-pure);
+            color: var(--white-pure);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            background: radial-gradient(circle at top right, var(--navy-light) 0%, var(--black-pure) 60%);
+        }
+
+        .checkout-wrapper {
+            width: 100%;
+            max-width: 1100px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 3rem;
+            background: var(--navy-base);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+        }
+
+        /* --- COLUNA ESQUERDA: RESUMO DO PEDIDO --- */
+        .order-summary {
+            padding-right: 2rem;
+            border-right: 1px solid var(--border-subtle);
+        }
+
+        .brand-header { margin-bottom: 3rem; }
+        .brand-header h2 { font-weight: 800; font-size: 1.5rem; letter-spacing: -1px; text-transform: uppercase; }
+        .brand-header span { color: var(--gold-light); }
+
+        .product-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--white-pure); }
+        .product-desc { color: var(--gray-medium); font-size: 0.95rem; margin-bottom: 2rem; }
+
+        .order-line { display: flex; justify-content: space-between; margin-bottom: 1rem; color: var(--gray-light); font-size: 0.95rem; }
+        .order-total { display: flex; justify-content: space-between; margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-subtle); font-size: 1.5rem; font-weight: 800; color: var(--gold-light); }
+
+        .security-badges { margin-top: 3rem; display: flex; flex-direction: column; gap: 1rem; }
+        .badge { display: flex; align-items: center; gap: 12px; background: rgba(0,0,0,0.3); padding: 12px; border-radius: 6px; border: 1px solid var(--border-subtle); }
+        .badge-icon { color: var(--success-green); font-weight: bold; }
+        .badge-text { font-size: 0.85rem; color: var(--gray-light); }
+
+        /* --- COLUNA DIREITA: FORMULÁRIO --- */
+        .checkout-form { display: flex; flex-direction: column; gap: 1.5rem; }
+        
+        .section-title { font-size: 1.1rem; font-weight: 600; color: var(--gold-light); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 1px; }
+
+        .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        
+        label { font-size: 0.85rem; color: var(--gray-medium); text-transform: uppercase; font-weight: 600; letter-spacing: 0.5px; }
+        input, select { 
+            background: var(--black-pure); border: 1px solid var(--border-subtle); color: var(--white-pure);
+            padding: 14px; border-radius: 4px; font-family: var(--font-main); font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+        input:focus, select:focus { outline: none; border-color: var(--gold-light); }
+        
+        .payment-methods { display: flex; gap: 1rem; margin-bottom: 1rem; }
+        .pay-method { flex: 1; text-align: center; padding: 12px; border: 1px solid var(--border-subtle); border-radius: 4px; cursor: pointer; color: var(--gray-medium); font-weight: 600; transition: all 0.3s; }
+        .pay-method.active { border-color: var(--gold-light); color: var(--gold-light); background: rgba(212, 175, 55, 0.05); }
+
+        .cta-pay {
+            background: var(--success-green); color: var(--black-pure); border: none; padding: 18px; border-radius: 4px;
+            font-size: 1.1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; cursor: pointer;
+            transition: all 0.3s ease; margin-top: 1rem; box-shadow: 0 10px 20px rgba(0, 200, 83, 0.2);
+        }
+        .cta-pay:hover { background: #00E676; transform: translateY(-2px); box-shadow: 0 15px 25px rgba(0, 200, 83, 0.4); }
+
+        @media (max-width: 900px) {
+            .checkout-wrapper { grid-template-columns: 1fr; padding: 2rem; }
+            .order-summary { padding-right: 0; border-right: none; border-bottom: 1px solid var(--border-subtle); padding-bottom: 2rem; margin-bottom: 1rem; }
+            body { padding: 1rem; align-items: flex-start; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="checkout-wrapper">
+        <div class="order-summary">
+            <div class="brand-header">
+                <h2>Oráculo <span>Premium</span></h2>
+            </div>
+            
+            <h1 class="product-title">Dossiê Master Oracular</h1>
+            <p class="product-desc">Acesso imediato à análise cruzada (Astrologia + Numerologia) gerada pela consciência coletiva.</p>
+
+            <div class="order-line">
+                <span>Dossiê Master Completo</span>
+                <span>R$ 497,00</span>
+            </div>
+            <div class="order-line">
+                <span>Desconto de Acesso Antecipado</span>
+                <span style="color: var(--success-green);">- R$ 200,00</span>
+            </div>
+            <div class="order-line">
+                <span>Entrega Expressa (15 Minutos)</span>
+                <span>Incluso</span>
+            </div>
+
+            <div class="order-total">
+                <span>TOTAL</span>
+                <span>R$ 297,00</span>
+            </div>
+
+            <div class="security-badges">
+                <div class="badge">
+                    <span class="badge-icon">✓</span>
+                    <span class="badge-text">Ambiente Criptografado (256-bit SSL)</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✓</span>
+                    <span class="badge-text">Garantia de Processamento em 15 Minutos</span>
+                </div>
+                <div class="badge">
+                    <span class="badge-icon">✓</span>
+                    <span class="badge-text">Dados de nascimento estritamente confidenciais</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="checkout-form">
+            
+            <h3 class="section-title">1. Dados para o Oráculo</h3>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Nome de Batismo Exato</label>
+                    <input type="text" placeholder="Nome completo" required>
+                </div>
+                <div class="form-group">
+                    <label>E-mail para Entrega</label>
+                    <input type="email" placeholder="seu@email.com" required>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Data de Nascimento</label>
+                    <input type="date" required>
+                </div>
+                <div class="form-group">
+                    <label>Hora Exata</label>
+                    <input type="time" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Cidade / Estado / País de Nascimento</label>
+                <input type="text" placeholder="Ex: Porto Alegre, RS, Brasil" required>
+            </div>
+
+            <h3 class="section-title" style="margin-top: 1rem;">2. Método de Pagamento</h3>
+            <div class="payment-methods">
+                <div class="pay-method active">PIX (Aprovação Imediata)</div>
+                <div class="pay-method">Cartão de Crédito</div>
+            </div>
+
+            <div class="form-group">
+                <label>Número do Cartão</label>
+                <input type="text" placeholder="0000 0000 0000 0000">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Validade</label>
+                    <input type="text" placeholder="MM/AA">
+                </div>
+                <div class="form-group">
+                    <label>CVV</label>
+                    <input type="text" placeholder="123">
+                </div>
+            </div>
+
+            <button class="cta-pay">PROCESSAR ACESSO SEGURO</button>
+            <p style="text-align: center; font-size: 0.75rem; color: var(--gray-medium); margin-top: 0.5rem;">
+                Ao finalizar, seus dados serão enviados para o motor de cruzamento astral.
+            </p>
+
+        </div>
+    </div>
+
+</body>
+</html>
