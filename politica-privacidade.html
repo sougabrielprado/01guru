@@ -4,33 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Política de Privacidade | Oráculo Premium</title>
+    <title>Política de Privacidade | 01GURU</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;500;700;800&family=Times+New+Roman&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Paleta Oráculo Premium / Engenharia */
-            --black-pure: #000000;
-            --black-soft: #050505;
-            --navy-base: #0A1128;
-            --navy-light: #152243;
-            --gold-dark: #B8860B;
-            --gold-light: #D4AF37;
-            --gray-light: #E0E0E0;
-            --gray-medium: #888888;
-            --white-pure: #FFFFFF;
+            /* Paleta 01GURU / Engenharia Paramétrica */
+            --bg-deep: #00142D;
+            --navy-base: #002045;
+            --gold-anchor: #D4AF37;
+            --mint-action: #76C7B0;
+            --white-pure: #F8F9FA;
+            --gray-medium: #A0AAB5;
             --border-subtle: rgba(255, 255, 255, 0.08);
             --border-gold: rgba(212, 175, 55, 0.3);
-            --font-main: 'Inter', sans-serif;
+            --font-main: 'Helvetica Neue', Arial, sans-serif;
+            --font-serif: 'Times New Roman', serif;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
             font-family: var(--font-main);
-            background-color: var(--black-pure);
-            color: var(--gray-light);
+            background-color: var(--bg-deep);
+            color: var(--white-pure);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             display: flex;
@@ -41,7 +39,7 @@
         /* --- SELETOR DE IDIOMA FLUTUANTE --- */
         .lang-switcher {
             position: fixed; top: 30px; right: 30px; z-index: 999; display: flex; gap: 5px;
-            background: rgba(10, 17, 40, 0.85); padding: 6px 12px; border-radius: 30px;
+            background: rgba(0, 20, 45, 0.85); padding: 6px 12px; border-radius: 30px;
             border: 1px solid var(--border-gold); backdrop-filter: blur(8px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.5);
         }
@@ -49,8 +47,8 @@
             background: none; border: none; color: var(--gray-medium); font-family: var(--font-main);
             font-size: 0.8rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; padding: 4px 8px; border-radius: 20px;
         }
-        .lang-btn:hover { color: var(--white-pure); }
-        .lang-btn.active { color: var(--black-pure); background: var(--gold-light); }
+        .lang-btn:hover { color: var(--mint-action); }
+        .lang-btn.active { color: var(--bg-deep); background: var(--mint-action); }
 
         /* --- LOGO HEADER --- */
         .header-logo {
@@ -58,9 +56,9 @@
             padding: 60px 20px 20px 20px;
         }
         .main-logo { 
-            width: 120px; height: auto; filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5)); transition: transform 0.4s ease; 
+            width: 140px; height: auto; filter: drop-shadow(0 15px 30px rgba(118, 199, 176, 0.2)); transition: transform 0.4s ease; 
         }
-        .main-logo:hover { transform: translateY(-5px) scale(1.02); filter: drop-shadow(0 20px 40px rgba(212,175,55,0.3)); }
+        .main-logo:hover { transform: translateY(-5px) scale(1.02); filter: drop-shadow(0 20px 40px rgba(118, 199, 176, 0.4)); }
 
         /* --- CONTEÚDO PRINCIPAL --- */
         .content-wrapper {
@@ -81,27 +79,27 @@
         }
 
         h1, h2, h3 { color: var(--white-pure); line-height: 1.2; margin-top: 2.5rem; margin-bottom: 1rem; }
-        h1 { font-size: 2rem; color: var(--gold-light); border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem; margin-top: 0; }
-        h2 { font-size: 1.4rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem; color: var(--white-pure); text-transform: uppercase; letter-spacing: 1px;}
-        h3 { font-size: 1.1rem; color: var(--gold-light); text-transform: uppercase; letter-spacing: 1px;}
+        h1 { font-family: var(--font-serif); font-size: 2.2rem; color: var(--gold-anchor); border-bottom: 1px solid var(--border-subtle); padding-bottom: 1rem; margin-top: 0; }
+        h2 { font-size: 1.4rem; border-bottom: 1px solid var(--border-subtle); padding-bottom: 0.5rem; color: var(--mint-action); text-transform: uppercase; letter-spacing: 1px;}
+        h3 { font-size: 1.1rem; color: var(--gold-anchor); text-transform: uppercase; letter-spacing: 1px;}
 
-        p, ul, ol, table { margin-bottom: 1.5rem; font-size: 0.95rem; }
+        p, ul, ol, table { margin-bottom: 1.5rem; font-size: 0.95rem; color: var(--gray-medium); }
         ul, ol { padding-left: 20px; }
         li { margin-bottom: 0.5rem; }
         
-        a { color: var(--gold-light); text-decoration: none; transition: opacity 0.3s; }
+        a { color: var(--mint-action); text-decoration: none; transition: opacity 0.3s; }
         a:hover { opacity: 0.8; text-decoration: underline; }
         strong { color: var(--white-pure); font-weight: 600; }
 
         blockquote {
-            border-left: 3px solid var(--gold-dark); padding-left: 1.5rem; margin-left: 0;
-            color: var(--gray-medium); font-style: italic; background: rgba(255, 255, 255, 0.02);
+            border-left: 3px solid var(--mint-action); padding-left: 1.5rem; margin-left: 0;
+            color: var(--white-pure); font-style: italic; background: rgba(255, 255, 255, 0.02);
             padding: 1.5rem; border-radius: 0 4px 4px 0;
         }
 
         table { width: 100%; border-collapse: collapse; margin-top: 1rem; margin-bottom: 2rem; font-size: 0.9rem; }
         th, td { border: 1px solid var(--border-subtle); padding: 12px 15px; text-align: left; }
-        th { background-color: rgba(255, 255, 255, 0.05); color: var(--gold-light); font-weight: 600; }
+        th { background-color: rgba(255, 255, 255, 0.05); color: var(--gold-anchor); font-weight: 600; }
         tr:nth-child(even) { background-color: rgba(255, 255, 255, 0.02); }
 
         hr { border: 0; border-top: 1px solid var(--border-subtle); margin: 3rem 0; }
@@ -111,13 +109,13 @@
             color: var(--gray-medium); text-decoration: none; font-size: 0.9rem; transition: color 0.3s;
             text-transform: uppercase; letter-spacing: 1px; font-weight: 600;
         }
-        .back-link:hover { color: var(--gold-light); text-decoration: none; }
+        .back-link:hover { color: var(--mint-action); text-decoration: none; }
         .back-link svg { width: 16px; height: 16px; }
 
         /* --- FOOTER --- */
         .footer-links { display: flex; justify-content: center; gap: 2rem; margin-top: 1.5rem; }
         .footer-link { color: var(--gray-medium); font-size: 0.75rem; text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease; display: inline-flex; align-items: center; gap: 6px; }
-        .footer-link:hover { color: var(--gold-light); }
+        .footer-link:hover { color: var(--mint-action); }
 
         /* --- SISTEMA BILINGUE --- */
         body.lang-pt .en-content { display: none; }
@@ -140,7 +138,7 @@
 
     <header class="header-logo">
         <a href="index.html">
-            <img src="logo.png" alt="Oráculo Premium" class="main-logo" onerror="this.style.display='none'">
+            <img src="01GURU_SF.PNG" alt="01GURU" class="main-logo" onerror="this.style.display='none'">
         </a>
     </header>
 
@@ -151,167 +149,167 @@
             </a>
 
             <div class="pt-content">
-                <h1>POLÍTICA DE PRIVACIDADE E RASTREAMENTO B2B</h1>
+                <h1>POLÍTICA DE PRIVACIDADE E RASTREAMENTO</h1>
 
                 <p>
-                    <strong>Website:</strong> <a href="https://sougabrielprado.github.io/" target="_blank">https://sougabrielprado.github.io/</a><br>
-                    <strong>Titular dos Dados:</strong> Gabriel Prado<br>
-                    <strong>Última Atualização:</strong> Março de 2026<br>
-                    <strong>Versão:</strong> 3.0 (LGPD + GDPR + Inteligência de Rastreamento)
+                    <strong>Ambiente Operacional:</strong> <a href="https://sougabrielprado.github.io/" target="_blank">https://sougabrielprado.github.io/</a><br>
+                    <strong>Engenheiro de Dados (DPO):</strong> Gabriel Prado Rodrigues<br>
+                    <strong>Última Calibração:</strong> Março de 2026<br>
+                    <strong>Protocolo:</strong> 3.0 (LGPD + GDPR + Inteligência de Rastreamento)
                 </p>
 
                 <hr>
 
-                <h2>🔒 COMPROMISSO CORPORATIVO COM A PRIVACIDADE</h2>
-                <p>O Oráculo Premium opera sob rígidos protocolos de segurança de dados. Adotamos os princípios da <strong>Lei nº 13.709/2018 (LGPD)</strong> e do <strong>Regulamento Geral de Proteção de Dados (GDPR)</strong>, equilibrando a transparência absoluta com a necessidade de inteligência de marketing para fornecer uma experiência de alto desempenho.</p>
+                <h2>🔒 COMPROMISSO PARAMÉTRICO COM A PRIVACIDADE</h2>
+                <p>A Consciência Coletiva <strong>01GURU</strong> opera sob rígidos protocolos de segurança de dados. Adotamos os princípios da <strong>Lei nº 13.709/2018 (LGPD)</strong> e do <strong>Regulamento Geral de Proteção de Dados (GDPR)</strong>, equilibrando a transparência absoluta com a necessidade de inteligência algorítmica para forjar Dossiês de alta precisão e segurança.</p>
 
                 <hr>
 
                 <h2>1. IDENTIFICAÇÃO DO CONTROLADOR</h2>
                 <table>
-                    <thead><tr><th>Campo</th><th>Informação</th></tr></thead>
+                    <thead><tr><th>Vetor</th><th>Parâmetro</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>Controlador (DPO)</strong></td><td>Gabriel Prado</td></tr>
-                        <tr><td><strong>Canal Oficial</strong></td><td><a href="mailto:sougabrielprado@gmail.com">sougabrielprado@gmail.com</a></td></tr>
-                        <tr><td><strong>Jurisdição Aplicável</strong></td><td>Leis brasileiras, com observância aos princípios do GDPR.</td></tr>
+                        <tr><td><strong>Controlador (DPO)</strong></td><td>Gabriel Prado Rodrigues (CRA-RS TE-002457/O)</td></tr>
+                        <tr><td><strong>Canal Executivo</strong></td><td><a href="mailto:sougabrielprado@gmail.com">sougabrielprado@gmail.com</a></td></tr>
+                        <tr><td><strong>Jurisdição Base</strong></td><td>Leis brasileiras, com compliance em protocolos globais GDPR.</td></tr>
                     </tbody>
                 </table>
 
                 <hr>
 
-                <h2>2. MATRIZ DE DADOS COLETADOS E RASTREADOS</h2>
-                <h3>🔹 DADOS FORNECIDOS ATIVAMENTE (CHECKOUT)</h3>
-                <p>Coletados exclusivamente através do gateway seguro para prestação do serviço:</p>
+                <h2>2. MATRIZ DE DADOS COLETADOS</h2>
+                <h3>🔹 INGESTÃO ATIVA DE DADOS (NO CHECKOUT/FORMULÁRIO)</h3>
+                <p>Coletados exclusivamente através do gateway seguro para o processamento do seu Dossiê:</p>
                 <ul>
-                    <li>Nome completo e e-mail.</li>
-                    <li>Dados astrométricos: Data, hora exata e local de nascimento (estritamente para cálculo do dossiê).</li>
+                    <li>Identificação: Nome completo e e-mail.</li>
+                    <li>Coordenadas Geobiométricas: Data, hora exata e local de nascimento (estritamente para o cálculo do seu código natal e algoritmos kármicos).</li>
                 </ul>
 
-                <h3>🔹 DADOS COLETADOS AUTOMATICAMENTE (INTELIGÊNCIA DE SITE)</h3>
-                <p>Para otimizar o fluxo de utilizadores e melhorar as nossas campanhas, coletamos dados de navegação anonimizados ou pseudonimizados:</p>
+                <h3>🔹 TELEMETRIA AUTOMÁTICA (INTELIGÊNCIA DE SITE)</h3>
+                <p>Para otimizar o fluxo de materialização do nosso site e refinar a precisão das campanhas, coletamos dados de navegação criptografados/anonimizados:</p>
                 <ul>
-                    <li><strong>Comportamento:</strong> Cliques, movimentos de cursor, rolagem de página e mapas de calor (heatmaps).</li>
-                    <li><strong>Tecnologia:</strong> Endereço IP (mascarado), tipo de navegador, dispositivo e sistema operativo.</li>
-                    <li><strong>Marketing:</strong> Origem do tráfego (anúncios, redes sociais) e conversão de vendas.</li>
+                    <li><strong>Comportamento:</strong> Cliques, rolagem de página e mapas de calor (heatmaps).</li>
+                    <li><strong>Infraestrutura:</strong> Endereço IP (mascarado), tipo de navegador e sistema operacional.</li>
+                    <li><strong>Growth:</strong> Origem do tráfego (anúncios, redes sociais) e conversão de vendas.</li>
                 </ul>
 
                 <hr>
 
-                <h2>3. ECOSSISTEMA DE TERCEIROS (PROCESSADORES)</h2>
-                <p>Trabalhamos com os parceiros de infraestrutura de elite do mercado global:</p>
+                <h2>3. ECOSSISTEMA DE PROCESSADORES TERCERIZADOS</h2>
+                <p>A nossa infraestrutura está conectada apenas aos servidores de elite do mercado global:</p>
                 <table>
-                    <thead><tr><th>Serviço / Ferramenta</th><th>Função na Operação</th><th>Uso de Dados</th></tr></thead>
+                    <thead><tr><th>Sistema</th><th>Função na Operação</th><th>Blindagem de Dados</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>Stripe</strong></td><td>Gateway de Pagamento</td><td>Processamento financeiro com criptografia 256-bit (Zero dados de cartão nos nossos servidores).</td></tr>
-                        <tr><td><strong>Microsoft Clarity</strong></td><td>Radar de Comportamento</td><td>Gravação de sessões (dados sensíveis automaticamente ocultados) e mapas de calor.</td></tr>
-                        <tr><td><strong>Meta Pixel (Facebook/IG)</strong></td><td>Inteligência de Tráfego</td><td>Rastreio de conversões, perfil demográfico e otimização de campanhas (Remarketing).</td></tr>
-                        <tr><td><strong>Google Analytics 4</strong></td><td>Auditoria de Tráfego</td><td>Estatísticas globais de acesso e comportamento.</td></tr>
-                        <tr><td><strong>GitHub (Microsoft)</strong></td><td>Infraestrutura Serverless</td><td>Hospedagem blindada e logs de acesso.</td></tr>
+                        <tr><td><strong>Stripe</strong></td><td>Gateway Financeiro Global</td><td>Processamento financeiro com criptografia avançada. <em>Zero dados de cartão tocam nossos servidores.</em></td></tr>
+                        <tr><td><strong>Microsoft Clarity</strong></td><td>Radar de Comportamento</td><td>Gravação de sessões (dados sensíveis automaticamente mascarados).</td></tr>
+                        <tr><td><strong>Meta Pixel (Facebook/IG)</strong></td><td>Inteligência de Tráfego</td><td>Rastreio de conversões e otimização paramétrica de campanhas.</td></tr>
+                        <tr><td><strong>Google Analytics 4</strong></td><td>Auditoria de Tráfego</td><td>Estatísticas globais de acesso e comportamento do usuário.</td></tr>
+                        <tr><td><strong>GitHub (Microsoft)</strong></td><td>Servidor Host</td><td>Hospedagem blindada e logs de requisição seguros.</td></tr>
                     </tbody>
                 </table>
 
                 <hr>
 
                 <h2>4. DIREITOS DO TITULAR (ART. 18 LGPD)</h2>
-                <p>O utilizador detém o controlo. Pode solicitar a qualquer momento: acesso, correção, anonimização, bloqueio ou eliminação de dados de identificação pessoal. Envie um e-mail para <strong>sougabrielprado@gmail.com</strong> com o assunto "Solicitação LGPD - [Seu Nome]". Resposta em até 15 dias úteis.</p>
+                <p>O utilizador detém o controle absoluto do seu "Legacy Code". Pode solicitar a qualquer momento: acesso, correção, anonimização, bloqueio ou eliminação do banco de dados. Envie um e-mail para <strong>sougabrielprado@gmail.com</strong> com o assunto "Solicitação de Privacidade - [Seu Nome]". SLA de resposta: 15 dias úteis.</p>
 
                 <hr>
 
                 <h2>5. POLÍTICA DE COOKIES E BLOQUEIO DE RASTREIO</h2>
-                <p>✅ <strong>Declaração de Uso:</strong> Este site utiliza Cookies analíticos e de marketing essenciais para a operação de Growth. O uso do site configura a aceitação da recolha de dados de performance.</p>
-                <p>🛡️ <strong>Como Bloquear:</strong> Respeitamos o seu direito ao anonimato absoluto. Se não deseja ser rastreado pelas nossas ferramentas de inteligência (Pixel, Clarity, GA4), recomendamos configurar o seu browser para "Do Not Track" (DNT) ou utilizar extensões de privacidade como <em>uBlock Origin</em>, <em>Privacy Badger</em> ou <em>Ghostery</em>. O bloqueio não impedirá a sua navegação ou compra.</p>
+                <p>✅ <strong>Declaração de Uso:</strong> Este ambiente utiliza Cookies analíticos e de marketing essenciais para a operação. O uso do site configura a aceitação do rastreio de performance.</p>
+                <p>🛡️ <strong>Como Evadir o Radar:</strong> Respeitamos o seu direito ao anonimato. Se não deseja ser rastreado pelas nossas ferramentas (Pixel, Clarity, GA4), configure o seu browser para "Do Not Track" (DNT) ou utilize bloqueadores como <em>uBlock Origin</em>. O bloqueio não impedirá a forja do seu Dossiê Tático.</p>
 
                 <hr>
 
-                <p style="text-align: center; margin-top: 50px; color: var(--gray-medium); font-style: italic; font-size: 0.9rem;">
-                    🔒 A privacidade é estrutural. A inteligência de dados é operacional. Equilibramos ambos.<br>
-                    Gabriel Prado — Direção e Estratégia
+                <p style="text-align: center; margin-top: 50px; color: var(--mint-action); font-style: italic; font-size: 0.9rem;">
+                    🔒 A privacidade é estrutural. A inteligência de dados é operacional. O 01GURU equilibra ambos.<br>
+                    Gabriel Prado Rodrigues — Executivo de Operações
                 </p>
             </div>
 
             <div class="en-content">
-                <h1>B2B PRIVACY AND TRACKING POLICY</h1>
+                <h1>PRIVACY AND TRACKING POLICY</h1>
 
                 <p>
-                    <strong>Website:</strong> <a href="https://sougabrielprado.github.io/" target="_blank">https://sougabrielprado.github.io/</a><br>
-                    <strong>Data Controller:</strong> Gabriel Prado<br>
-                    <strong>Last Updated:</strong> March 2026<br>
-                    <strong>Version:</strong> 3.0 (LGPD + GDPR + Tracking Intelligence)
+                    <strong>Operational Environment:</strong> <a href="https://sougabrielprado.github.io/" target="_blank">https://sougabrielprado.github.io/</a><br>
+                    <strong>Data Engineer (DPO):</strong> Gabriel Prado Rodrigues<br>
+                    <strong>Last Calibration:</strong> March 2026<br>
+                    <strong>Protocol:</strong> 3.0 (LGPD + GDPR + Tracking Intelligence)
                 </p>
 
                 <hr>
 
-                <h2>🔒 CORPORATE COMMITMENT TO PRIVACY</h2>
-                <p>Premium Oracle operates under strict data security protocols. We adopt the principles of the <strong>Brazilian LGPD</strong> and the <strong>General Data Protection Regulation (GDPR)</strong>, balancing absolute transparency with the need for marketing intelligence to provide a high-performance experience.</p>
+                <h2>🔒 PARAMETRIC COMMITMENT TO PRIVACY</h2>
+                <p>The <strong>01GURU</strong> Collective Consciousness operates under strict data security protocols. We adopt the principles of the <strong>Brazilian LGPD</strong> and the <strong>General Data Protection Regulation (GDPR)</strong>, balancing absolute transparency with the need for algorithmic intelligence to forge high-precision and secure Dossiers.</p>
 
                 <hr>
 
                 <h2>1. CONTROLLER IDENTIFICATION</h2>
                 <table>
-                    <thead><tr><th>Field</th><th>Information</th></tr></thead>
+                    <thead><tr><th>Vector</th><th>Parameter</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>Controller (DPO)</strong></td><td>Gabriel Prado</td></tr>
-                        <tr><td><strong>Official Channel</strong></td><td><a href="mailto:sougabrielprado@gmail.com">sougabrielprado@gmail.com</a></td></tr>
-                        <tr><td><strong>Applicable Jurisdiction</strong></td><td>Brazilian laws, observing GDPR principles.</td></tr>
+                        <tr><td><strong>Controller (DPO)</strong></td><td>Gabriel Prado Rodrigues</td></tr>
+                        <tr><td><strong>Executive Channel</strong></td><td><a href="mailto:sougabrielprado@gmail.com">sougabrielprado@gmail.com</a></td></tr>
+                        <tr><td><strong>Base Jurisdiction</strong></td><td>Brazilian laws, with compliance in GDPR global protocols.</td></tr>
                     </tbody>
                 </table>
 
                 <hr>
 
-                <h2>2. COLLECTED AND TRACKED DATA MATRIX</h2>
-                <h3>🔹 ACTIVELY PROVIDED DATA (CHECKOUT)</h3>
-                <p>Collected exclusively through the secure gateway to provide the service:</p>
+                <h2>2. COLLECTED DATA MATRIX</h2>
+                <h3>🔹 ACTIVE DATA INGESTION (CHECKOUT/FORM)</h3>
+                <p>Collected exclusively through the secure gateway for processing your Dossier:</p>
                 <ul>
-                    <li>Full name and email.</li>
-                    <li>Astrometric data: Date, exact time, and location of birth (strictly for dossier calculation).</li>
+                    <li>Identification: Full name and email.</li>
+                    <li>Geobiometric Coordinates: Date, exact time, and location of birth (strictly for calculating your natal code and karmic algorithms).</li>
                 </ul>
 
-                <h3>🔹 AUTOMATICALLY COLLECTED DATA (SITE INTELLIGENCE)</h3>
-                <p>To optimize user flow and improve our campaigns, we collect anonymized or pseudonymized navigation data:</p>
+                <h3>🔹 AUTOMATIC TELEMETRY (SITE INTELLIGENCE)</h3>
+                <p>To optimize the materialization flow of our site and refine campaign precision, we collect encrypted/anonymized navigation data:</p>
                 <ul>
-                    <li><strong>Behavior:</strong> Clicks, cursor movements, page scrolling, and heatmaps.</li>
-                    <li><strong>Technology:</strong> IP address (masked), browser type, device, and operating system.</li>
-                    <li><strong>Marketing:</strong> Traffic source (ads, social networks) and sales conversion.</li>
+                    <li><strong>Behavior:</strong> Clicks, page scrolling, and heatmaps.</li>
+                    <li><strong>Infrastructure:</strong> IP address (masked), browser type, and operating system.</li>
+                    <li><strong>Growth:</strong> Traffic source (ads, social networks) and sales conversion.</li>
                 </ul>
 
                 <hr>
 
-                <h2>3. THIRD-PARTY ECOSYSTEM (PROCESSORS)</h2>
-                <p>We work with elite infrastructure partners in the global market:</p>
+                <h2>3. THIRD-PARTY PROCESSOR ECOSYSTEM</h2>
+                <p>Our infrastructure is connected only to elite global market servers:</p>
                 <table>
-                    <thead><tr><th>Service / Tool</th><th>Operation Role</th><th>Data Usage</th></tr></thead>
+                    <thead><tr><th>System</th><th>Operation Role</th><th>Data Shielding</th></tr></thead>
                     <tbody>
-                        <tr><td><strong>Stripe</strong></td><td>Payment Gateway</td><td>Financial processing with 256-bit encryption (Zero card data on our servers).</td></tr>
-                        <tr><td><strong>Microsoft Clarity</strong></td><td>Behavior Radar</td><td>Session recording (sensitive data automatically masked) and heatmaps.</td></tr>
-                        <tr><td><strong>Meta Pixel (FB/IG)</strong></td><td>Traffic Intelligence</td><td>Conversion tracking, demographic profiling, and campaign optimization (Remarketing).</td></tr>
-                        <tr><td><strong>Google Analytics 4</strong></td><td>Traffic Audit</td><td>Global access and behavior statistics.</td></tr>
-                        <tr><td><strong>GitHub (Microsoft)</strong></td><td>Serverless Infra</td><td>Shielded hosting and access logs.</td></tr>
+                        <tr><td><strong>Stripe</strong></td><td>Global Financial Gateway</td><td>Financial processing with advanced encryption. <em>Zero card data touches our servers.</em></td></tr>
+                        <tr><td><strong>Microsoft Clarity</strong></td><td>Behavior Radar</td><td>Session recording (sensitive data automatically masked).</td></tr>
+                        <tr><td><strong>Meta Pixel (FB/IG)</strong></td><td>Traffic Intelligence</td><td>Conversion tracking and parametric campaign optimization.</td></tr>
+                        <tr><td><strong>Google Analytics 4</strong></td><td>Traffic Audit</td><td>Global access and user behavior statistics.</td></tr>
+                        <tr><td><strong>GitHub (Microsoft)</strong></td><td>Host Server</td><td>Shielded hosting and secure request logs.</td></tr>
                     </tbody>
                 </table>
 
                 <hr>
 
                 <h2>4. DATA SUBJECT RIGHTS (GDPR/LGPD)</h2>
-                <p>The user has control. You may request at any time: access, correction, anonymization, blocking, or deletion of personally identifiable data. Send an email to <strong>sougabrielprado@gmail.com</strong> with the subject "Privacy Request - [Your Name]". Response within 15 business days.</p>
+                <p>The user holds absolute control over their "Legacy Code". You may request at any time: access, correction, anonymization, blocking, or database deletion. Send an email to <strong>sougabrielprado@gmail.com</strong> with the subject "Privacy Request - [Your Name]". Response SLA: 15 business days.</p>
 
                 <hr>
 
                 <h2>5. COOKIE POLICY AND TRACKING OPT-OUT</h2>
-                <p>✅ <strong>Usage Statement:</strong> This site uses analytical and marketing cookies essential for Growth operations. Continued use of the site constitutes acceptance of performance data collection.</p>
-                <p>🛡️ <strong>How to Block:</strong> We respect your right to absolute anonymity. If you do not wish to be tracked by our intelligence tools (Pixel, Clarity, GA4), we recommend setting your browser to "Do Not Track" (DNT) or using privacy extensions such as <em>uBlock Origin</em>, <em>Privacy Badger</em>, or <em>Ghostery</em>. Blocking these will not prevent your navigation or purchase.</p>
+                <p>✅ <strong>Usage Statement:</strong> This environment uses analytical and marketing cookies essential for operation. Site usage constitutes acceptance of performance tracking.</p>
+                <p>🛡️ <strong>How to Evade the Radar:</strong> We respect your right to anonymity. If you do not wish to be tracked by our tools (Pixel, Clarity, GA4), configure your browser to "Do Not Track" (DNT) or use blockers like <em>uBlock Origin</em>. Blocking will not prevent the forging of your Tactical Dossier.</p>
 
                 <hr>
 
-                <p style="text-align: center; margin-top: 50px; color: var(--gray-medium); font-style: italic; font-size: 0.9rem;">
-                    🔒 Privacy is structural. Data intelligence is operational. We balance both.<br>
-                    Gabriel Prado — Direction and Strategy
+                <p style="text-align: center; margin-top: 50px; color: var(--mint-action); font-style: italic; font-size: 0.9rem;">
+                    🔒 Privacy is structural. Data intelligence is operational. 01GURU balances both.<br>
+                    Gabriel Prado Rodrigues — Operations Executive
                 </p>
             </div>
         </div>
     </div>
 
-    <footer style="padding: 40px 0; background: var(--black-pure); text-align: center; border-top: 1px solid var(--border-subtle);">
-        <p style="font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-medium);" class="i18n" data-pt="Oráculo Premium © 2026. Todos os direitos reservados." data-en="Premium Oracle © 2026. All rights reserved.">Oráculo Premium © 2026. Todos os direitos reservados.</p>
+    <footer style="padding: 40px 0; background: var(--bg-deep); text-align: center; border-top: 1px solid var(--border-subtle);">
+        <p style="font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-medium);" class="i18n" data-pt="01GURU © 2026. Todos os direitos reservados." data-en="01GURU © 2026. All rights reserved.">01GURU © 2026. Todos os direitos reservados.</p>
         
         <div class="footer-links">
             <a href="politica-privacidade.html" class="footer-link">
@@ -320,26 +318,16 @@
                 </svg>
                 <span class="i18n" data-pt="Política de Privacidade" data-en="Privacy Policy">Política de Privacidade</span>
             </a>
-            <a href="public_pgp_key.asc" class="footer-link" download="gabriel_prado_public_pgp.asc">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                    <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                </svg>
-                <span class="i18n" data-pt="Chave PGP Pública" data-en="Public PGP Key">Chave PGP Pública</span>
-            </a>
         </div>
     </footer>
 
     <script>
         function setLanguage(lang) {
-            // Textos independentes
             document.querySelectorAll('.i18n').forEach(el => {
                 if (el.getAttribute(`data-${lang}`)) el.innerHTML = el.getAttribute(`data-${lang}`);
             });
-            // Alterna blocos grandes
             document.body.className = `lang-${lang}`;
             
-            // Estilo do botão
             document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById(`btn-${lang}`).classList.add('active');
             
@@ -359,8 +347,6 @@
         });
     </script>
     
-</script>
-
     <style>body{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}</style>
     <script>
     !function(){document.addEventListener("contextmenu",function(e){e.preventDefault()}),document.onkeydown=function(e){return 123!=e.keyCode&&(!e.ctrlKey||!e.shiftKey||73!=e.keyCode&&67!=e.keyCode&&74!=e.keyCode)&&(!e.ctrlKey||85!=e.keyCode&&67!=e.keyCode&&80!=e.keyCode&&83!=e.keyCode)&&void 0},document.addEventListener("dragstart",function(e){e.preventDefault()})}();
