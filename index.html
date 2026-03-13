@@ -13,7 +13,8 @@
     <style>
         /* CSS NEURO-OTIMIZADO (01GURU Corporate Identity) */
         :root {
-            --bg-deep: #00142D;
+            --bg-deep: #000B18; /* Bordas ultra escuras (quase buraco negro) */
+            --bg-glow: #002855; /* Brilho central marinho */
             --gold-anchor: #D4AF37;
             --mint-action: #76C7B0;
             --mint-hover: #5DAA93;
@@ -24,7 +25,16 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: var(--font-main); }
-        body { background-color: var(--bg-deep); color: var(--text-light); line-height: 1.6; overflow-x: hidden; scroll-behavior: smooth; }
+        
+        body { 
+            /* O Fundo 3D Magnético */
+            background: radial-gradient(circle at top center, var(--bg-glow) 0%, var(--bg-deep) 100%);
+            background-attachment: fixed;
+            color: var(--text-light); 
+            line-height: 1.6; 
+            overflow-x: hidden; 
+            scroll-behavior: smooth; 
+        }
 
         /* --- SELETOR DE IDIOMA FLUTUANTE --- */
         .lang-switcher {
@@ -42,14 +52,27 @@
 
         /* HEADER & HERO (Dobra de Atenção) */
         .hero { text-align: center; padding: 80px 20px 40px; position: relative; max-width: 900px; margin: 0 auto; }
-        .hero::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 100vw; height: 100%; background: radial-gradient(circle, rgba(118, 199, 176, 0.05) 0%, transparent 70%); z-index: -1; }
-        .mascot-container img { width: 180px; filter: drop-shadow(0 0 25px rgba(118,199,176,0.3)); animation: float 4s ease-in-out infinite; margin-bottom: 20px; }
-        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
         
-        .hero h1 { font-family: 'Times New Roman', serif; color: var(--gold-anchor); font-size: 2.8rem; margin: 20px 0; line-height: 1.2; }
-        .hero p { max-width: 700px; margin: 0 auto 30px; color: #d1cadd; font-size: 1.15rem; }
-        .social-proof { font-size: 0.9rem; color: var(--mint-action); font-style: italic; margin-top: 15px; display: block; }
+        /* A CORUJA HIPNÓTICA */
+        .mascot-container img { 
+            width: 180px; 
+            filter: drop-shadow(0 0 15px rgba(118,199,176,0.2)); 
+            animation: float 4s ease-in-out infinite; 
+            margin-bottom: 20px; 
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Transição ultra fluida */
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* O Gatilho do Hover (A Mágica) */
+        .mascot-container img:hover {
+            transform: scale(1.15) translateY(-5px); /* Dá a crescida e sobe para o usuário */
+            filter: drop-shadow(0 0 50px rgba(118,199,176,0.9)) brightness(1.15); /* O Neon acende */
+            animation-play-state: paused; /* Trava ela no ar enquanto o mouse está em cima */
+        }
 
+        @keyframes float { 0% { transform: translateY(0px); } 50% { transform: translateY(-10px); } 100% { transform: translateY(0px); } }
         /* BOTÃO PULSANTE DE DOPAMINA */
         .cta-btn { display: inline-block; background: var(--mint-action); color: var(--bg-deep); padding: 20px 40px; font-size: 1.2rem; font-weight: 800; text-transform: uppercase; text-decoration: none; border-radius: 50px; box-shadow: 0 4px 15px rgba(118, 199, 176, 0.4); animation: pulse 2s infinite; transition: all 0.3s ease; }
         .cta-btn:hover { background: var(--mint-hover); transform: scale(1.05); }
