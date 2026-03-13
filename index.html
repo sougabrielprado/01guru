@@ -176,14 +176,20 @@
         .card:hover { border-color: var(--mint-action); }
         .card h3 { color: var(--text-light); margin-bottom: 10px; font-size: 1.3rem; }
         .card p { color: #A0AAB5; font-size: 0.9rem; margin-bottom: 20px; min-height: 45px; }
-        .card .price { color: var(--mint-action); font-size: 1.8rem; font-weight: bold; margin-bottom: 15px; }
         .card-btn { display: block; width: 100%; text-align: center; border: 1px solid var(--mint-action); color: var(--mint-action); padding: 12px; text-decoration: none; font-weight: bold; border-radius: 4px; transition: all 0.3s; }
         .card-btn:hover { background: var(--mint-action); color: var(--bg-deep); }
 
+        /* HACK DE PRECIFICAÇÃO (Neuromarketing) */
+        .price-hack { display: flex; align-items: baseline; justify-content: center; color: var(--mint-action); margin-bottom: 20px; }
+        .price-hack .parcelas { font-size: 1.2rem; font-weight: 800; margin-right: 5px; color: var(--gold-anchor); }
+        .price-hack .moeda { font-size: 1rem; margin-right: 4px; opacity: 0.5; }
+        .price-hack .valor { font-size: 2.5rem; font-weight: 800; line-height: 1; }
+        .price-hack .centavos { font-size: 1rem; opacity: 0.5; font-weight: bold; }
+
         .card.god-mode { border: 2px solid var(--gold-anchor); background: rgba(212, 175, 55, 0.05); transform: scale(1.02); }
         .card.god-mode .badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--gold-anchor); color: var(--bg-deep); padding: 4px 15px; font-size: 0.8rem; font-weight: bold; border-radius: 20px; text-transform: uppercase; white-space: nowrap; }
-        .card.god-mode .price { color: var(--gold-anchor); }
-        .card.god-mode .old-price { text-decoration: line-through; color: #A0AAB5; font-size: 1.1rem; display: block; margin-bottom: -5px; }
+        .card.god-mode .price-hack { color: var(--gold-anchor); }
+        .card.god-mode .old-price { text-decoration: line-through; color: #A0AAB5; font-size: 1.1rem; display: block; margin-bottom: 5px; text-align: center; }
         .card.god-mode .card-btn { background: var(--gold-anchor); color: var(--bg-deep); border: none; }
         .card.god-mode .card-btn:hover { background: #E5C354; transform: scale(1.02); }
 
@@ -320,25 +326,49 @@
                 <div class="card">
                     <h3>Sinastria & Algoritmo do Amor</h3>
                     <p>Cruzamento de códigos natais. Descubra atritos kármicos e rotas de construção a dois.</p>
-                    <div class="price">R$ 97</div>
+                    <div class="price-hack">
+                        <span class="parcelas">12x</span>
+                        <span class="moeda">de</span>
+                        <span class="valor">9</span>
+                        <span class="centavos">,68</span>
+                    </div>
+                    <p style="text-align:center; font-size:0.75rem; color:#A0AAB5; margin-top:-15px; margin-bottom:15px;">ou R$ 97 à vista</p>
                     <a href="https://buy.stripe.com/8x2bJ35D62KA7St8L91ZS09" target="_blank" class="card-btn">Analisar Compatibilidade</a>
                 </div>
                 <div class="card">
                     <h3>Firewall Pessoal</h3>
                     <p>Auditoria profunda de proteção, identificação de inimigos ocultos e bloqueios energéticos.</p>
-                    <div class="price">R$ 97</div>
+                    <div class="price-hack">
+                        <span class="parcelas">12x</span>
+                        <span class="moeda">de</span>
+                        <span class="valor">9</span>
+                        <span class="centavos">,68</span>
+                    </div>
+                    <p style="text-align:center; font-size:0.75rem; color:#A0AAB5; margin-top:-15px; margin-bottom:15px;">ou R$ 97 à vista</p>
                     <a href="https://buy.stripe.com/4gM5kF3uY98Y5Kl1iH1ZS0a" target="_blank" class="card-btn">Ativar Proteção</a>
                 </div>
                 <div class="card">
                     <h3>Auditoria de Carreira & Caixa</h3>
                     <p>Onde está o vazamento do seu dinheiro? Identificação de timing para prosperidade.</p>
-                    <div class="price">R$ 97</div>
+                    <div class="price-hack">
+                        <span class="parcelas">12x</span>
+                        <span class="moeda">de</span>
+                        <span class="valor">9</span>
+                        <span class="centavos">,68</span>
+                    </div>
+                    <p style="text-align:center; font-size:0.75rem; color:#A0AAB5; margin-top:-15px; margin-bottom:15px;">ou R$ 97 à vista</p>
                     <a href="https://buy.stripe.com/8x2aEZ0iMad2goZ5yX1ZS0b" target="_blank" class="card-btn">Auditar Finanças</a>
                 </div>
                 <div class="card">
                     <h3>Auditoria de Código Natal</h3>
                     <p>Seu Blueprint (O Mapa de Missão). Descoberta de talentos ocultos e falhas sistêmicas.</p>
-                    <div class="price">R$ 197</div>
+                    <div class="price-hack">
+                        <span class="parcelas">12x</span>
+                        <span class="moeda">de</span>
+                        <span class="valor">19</span>
+                        <span class="centavos">,66</span>
+                    </div>
+                    <p style="text-align:center; font-size:0.75rem; color:#A0AAB5; margin-top:-15px; margin-bottom:15px;">ou R$ 197 à vista</p>
                     <a href="https://buy.stripe.com/bJeeVf2qU4SI8Wxf9x1ZS0e" target="_blank" class="card-btn">Decodificar Mapa</a>
                 </div>
             </div>
@@ -353,7 +383,14 @@
                         <li>Roadmap de Trânsitos e Projeção (Valor: R$ 394)</li>
                         <li>Firewall e Sinastria Inclusos (Valor: R$ 194)</li>
                     </ul>
-                    <div class="price"><span class="old-price">Valor Total: R$ 982,00</span>R$ 497</div>
+                    <span class="old-price">Valor Total: R$ 982,00</span>
+                    <div class="price-hack">
+                        <span class="parcelas" style="color:var(--text-light);">12x</span>
+                        <span class="moeda">de</span>
+                        <span class="valor">49</span>
+                        <span class="centavos">,60</span>
+                    </div>
+                    <p style="text-align:center; font-size:0.8rem; color:#A0AAB5; margin-top:-15px; margin-bottom:15px;">ou R$ 497 à vista</p>
                     <a href="https://buy.stripe.com/5kQ28t2qUetifkV4uT1ZS0l" target="_blank" class="card-btn">👉 SIM! QUERO FORJAR MEU DOSSIÊ MASTER</a>
                 </div>
             </div>
@@ -476,25 +513,37 @@
                 <div class="card">
                     <h3>Algorithmic Compatibility</h3>
                     <p>Cross-reference two natal codes. Discover karmic friction and partnership optimization routes.</p>
-                    <div class="price">USD $27</div>
+                    <div class="price-hack">
+                        <span class="moeda">USD $</span>
+                        <span class="valor">27</span>
+                    </div>
                     <a href="https://buy.stripe.com/8x2bJ35D62KA7St8L91ZS09" target="_blank" class="card-btn">Analyze Compatibility</a>
                 </div>
                 <div class="card">
                     <h3>Personal Firewall Audit</h3>
                     <p>Deep protection sweep. Identify hidden enemies and energy blockages.</p>
-                    <div class="price">USD $27</div>
+                    <div class="price-hack">
+                        <span class="moeda">USD $</span>
+                        <span class="valor">27</span>
+                    </div>
                     <a href="https://buy.stripe.com/4gM5kF3uY98Y5Kl1iH1ZS0a" target="_blank" class="card-btn">Activate Firewall</a>
                 </div>
                 <div class="card">
                     <h3>Career & Cash Flow Audit</h3>
                     <p>Where is your cash leaking? Identify the exact parametric timing for wealth.</p>
-                    <div class="price">USD $27</div>
+                    <div class="price-hack">
+                        <span class="moeda">USD $</span>
+                        <span class="valor">27</span>
+                    </div>
                     <a href="https://buy.stripe.com/8x2aEZ0iMad2goZ5yX1ZS0b" target="_blank" class="card-btn">Audit Finances</a>
                 </div>
                 <div class="card">
                     <h3>Natal Code Blueprint</h3>
                     <p>Your source code. Discovery of hidden talents and mapping of systemic flaws.</p>
-                    <div class="price">USD $47</div>
+                    <div class="price-hack">
+                        <span class="moeda">USD $</span>
+                        <span class="valor">47</span>
+                    </div>
                     <a href="https://buy.stripe.com/bJeeVf2qU4SI8Wxf9x1ZS0e" target="_blank" class="card-btn">Decode Blueprint</a>
                 </div>
             </div>
@@ -509,7 +558,11 @@
                         <li>Transits Roadmap & 5-Year Projection (Value: $80)</li>
                         <li>Firewall and Compatibility Included (Value: $54)</li>
                     </ul>
-                    <div class="price"><span class="old-price">Total Value: USD $214.00</span>USD $97</div>
+                    <span class="old-price">Total Value: USD $214.00</span>
+                    <div class="price-hack">
+                        <span class="moeda" style="color:var(--text-light);">USD $</span>
+                        <span class="valor">97</span>
+                    </div>
                     <a href="https://buy.stripe.com/5kQ28t2qUetifkV4uT1ZS0l" target="_blank" class="card-btn">👉 YES! FORGE MY MASTER DOSSIER NOW</a>
                 </div>
             </div>
