@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01GURU | O Seu Código do Destino</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Variáveis de Cores Neuro-Otimizadas */
+        :root {
+            --bg-dark: #120D1A; /* Fundo universo, retém a atenção (Córtex Visual) */
+            --lilac: #B5A1D6; /* Cor da coruja - Intuição e Mistério */
+            --mint: #86C5A6; /* Cor do logo 01GURU - Ação e Prosperidade */
+            --mint-hover: #6EB08E;
+            --text-light: #F4F1F8;
+            --gold: #F2C94C; /* Ancoragem de valor/riqueza */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px; /* Layout estreito facilita a leitura (eye-tracking) */
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid rgba(181, 161, 214, 0.1);
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--gold);
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--lilac);
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #d1cadd;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-container img {
+            max-width: 200px;
+            height: auto;
+            /* Efeito de brilho suave para atrair os olhos */
+            filter: drop-shadow(0px 0px 15px rgba(181, 161, 214, 0.4));
+        }
+
+        /* Botão Pulsante (Gatilho de Dopamina/Ação) */
+        .cta-button {
+            display: block;
+            width: 100%;
+            max-width: 400px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: var(--mint);
+            color: #000;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: 800;
+            text-decoration: none;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(134, 197, 166, 0.4);
+            animation: pulse 2s infinite;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: var(--mint-hover);
+            transform: scale(1.05);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(134, 197, 166, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(134, 197, 166, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(134, 197, 166, 0); }
+        }
+
+        .social-proof {
+            font-size: 0.9rem;
+            color: var(--lilac);
+            text-align: center;
+            margin-top: -15px;
+            font-style: italic;
+        }
+
+        /* Lista de Dores e Benefícios */
+        ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        ul li {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+            text-align: left;
+        }
+
+        ul li::before {
+            content: "🔮";
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        .price-box {
+            background: linear-gradient(145deg, rgba(181, 161, 214, 0.1), rgba(181, 161, 214, 0.05));
+            border: 1px solid var(--lilac);
+            border-radius: 15px;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .price-box .old-price {
+            text-decoration: line-through;
+            color: #888;
+            font-size: 1.2rem;
+        }
+
+        .price-box .new-price {
+            font-size: 2.5rem;
+            color: var(--mint);
+            font-weight: 800;
+            margin: 10px 0;
+        }
+
+        .guarantee {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            border: 1px dashed var(--gold);
+            border-radius: 10px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.5rem; }
+            .cta-button { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <section>
+            <div class="logo-container">
+                <img src="imagem.png" alt="Logo 01GURU">
+            </div>
+            <h1>Existe um Código Oculto no seu Nascimento que dita o seu Sucesso, seus Relacionamentos e a sua Conta Bancária.</h1>
+            <p>Descubra com precisão matemática qual é o seu propósito de vida e destrave os bloqueios invisíveis que estão atrasando a sua evolução. O 01GURU decodifica a sua alma.</p>
+            
+            <a href="#checkout" class="cta-button">👉 QUERO DESCOBRIR MEU CÓDIGO AGORA</a>
+            <p class="social-proof">✨ Junte-se a mais de 2.500 pessoas que já encontraram seu verdadeiro caminho.</p>
+        </section>
+
+        <section>
+            <h2>Você sente que está remando contra a maré?</h2>
+            <p>Responda com sinceridade:</p>
+            <ul>
+                <li>Trabalha muito, mas a prosperidade financeira parece sempre escapar pelos dedos?</li>
+                <li>Atrai padrões repetitivos em relacionamentos e não entende o porquê?</li>
+                <li>Sente um vazio no peito, como se estivesse vivendo a vida de outra pessoa, longe do seu propósito?</li>
+            </ul>
+            <p><strong>Isso não é culpa sua.</strong> Você está apenas operando sem o seu "manual de instruções". Você está vivendo fora da frequência do seu design cósmico.</p>
+        </section>
+
+        <section>
+            <h2>Apresentamos o Guia 01GURU</h2>
+            <p>Mais do que astrologia genérica de jornal. É o encontro da sabedoria milenar com a precisão dos números. Olá, eu sou Gabriel Prado, o criador do 01GURU. Passei anos decodificando a linguagem dos astros e da numerologia para criar um sistema validado que revela com 99,9% de precisão as tendências da sua vida. Não é misticismo barato, é a matemática da sua alma.</p>
+        </section>
+
+        <section id="checkout">
+            <h2>O que você vai receber hoje:</h2>
+            <ul>
+                <li>Seu Mapa Astral de Missão e Propósito (Valor: R$ 350)</li>
+                <li>Mapa Numerológico Cabalístico Financeiro (Valor: R$ 250)</li>
+                <li>Previsões de Trânsitos para os próximos 12 meses (Valor: R$ 197)</li>
+                <li style="color: var(--gold);"><strong>BÔNUS HOJE:</strong> O Ritual de Limpeza Energética Diária em Áudio (Valor: R$ 97)</li>
+            </ul>
+
+            <div class="price-box">
+                <p>Valor total de tudo isso: <span class="old-price">R$ 894,00</span></p>
+                <p>Nesta janela de alinhamento, leve seu Dossiê Cósmico por apenas:</p>
+                <div class="new-price">12x de R$ 19,66</div>
+                <p>ou R$ 197 à vista.</p>
+                
+                <a href="LINK_DO_SEU_CHECKOUT_AQUI" class="cta-button">👉 SIM! QUERO DECODIFICAR MEU DESTINO!</a>
+            </div>
+        </section>
+
+        <section>
+            <div class="guarantee">
+                <h3 style="color: var(--gold);">Garantia Cósmica de 7 Dias</h3>
+                <p>A Sabedoria da Coruja garante: Se você ler o seu Código do Destino e sentir que não descreve exatamente quem você é, envie um único e-mail e eu devolvo 100% do seu dinheiro. O risco é todo meu.</p>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>
