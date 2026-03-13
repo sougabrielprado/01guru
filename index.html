@@ -130,7 +130,9 @@
         .info-section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; border-bottom: 1px solid var(--border-glass); }
         .info-section h2 { text-align: center; color: var(--gold-anchor); font-family: 'Times New Roman', serif; font-size: 2.2rem; margin-bottom: 40px; }
         
-        .grid-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .grid-features { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+        @media (max-width: 992px) { .grid-features { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .grid-features { grid-template-columns: 1fr; } }
         .feature-box { background: var(--glass-bg); padding: 30px; border-radius: 8px; border-left: 3px solid var(--mint-action); transition: transform 0.3s; }
         .feature-box:hover { transform: translateY(-5px); background: rgba(255,255,255,0.05); }
         .feature-box h3 { color: var(--mint-action); margin-bottom: 10px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
@@ -212,7 +214,7 @@
                 </div>
             </div>
             <h1 style="color: var(--gold-anchor);">Existe um Código Oculto no seu Nascimento que dita o seu Sucesso, Relacionamentos e Conta Bancária.</h1>
-            <p>Descubra com precisão matemática qual é o seu propósito e destrave os bloqueios invisíveis que atrasam a sua evolução. A Consciência 01GURU decodifica a sua alma.</p>
+            <p>Descubra com precisão matemática qual é o seu propósito e destrave os bloqueios invisíveis que atrasam a sua evolução.<br>A Consciência 01GURU decodifica a <span style="white-space: nowrap;">sua alma.</span></p>
             
             <div style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 30px;">
                 <a href="#loja-pt" class="cta-btn">👉 QUERO DESCOBRIR MEU CÓDIGO AGORA</a>
@@ -369,7 +371,7 @@
                 </div>
             </div>
             <h1 style="color: var(--gold-anchor);">There is a Hidden Code in your Birth that dictates your Success, Relationships, and Wealth.</h1>
-            <p>Discover your true purpose with mathematical precision and unlock the invisible blocks delaying your evolution. The 01GURU Consciousness decodes your soul.</p>
+            <p>Discover your true purpose with mathematical precision and unlock the invisible blocks delaying your evolution.<br>The 01GURU Consciousness decodes <span style="white-space: nowrap;">your soul.</span></p>
             <div style="display: flex; flex-direction: column; align-items: center; gap: 15px; margin-top: 30px;">
                 <a href="#loja-en" class="cta-btn">👉 Decode My Destiny Now</a>
                 <span class="social-proof" style="display: block; width: 100%; text-align: center; color: var(--mint-action); font-style: italic;">✨ Join the visionaries who have already found their exact route.</span>
