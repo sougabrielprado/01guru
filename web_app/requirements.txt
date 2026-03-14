@@ -1,6 +1,0 @@
-flask
-fpdf2
-google-genai
-groq
-gunicorn
-python-dotenv
