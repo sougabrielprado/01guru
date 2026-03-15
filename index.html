@@ -21,8 +21,8 @@ body{background:var(--bg);color:var(--light);font-family:var(--fb);font-size:17p
 .lang-btn.active{background:var(--gold);color:var(--bg)}
 .lang-btn:hover:not(.active){color:var(--gold)}
 
-/* HEADER FIXED */
-header{position:fixed;top:0;left:0;width:100%;padding:15px 36px;display:flex;align-items:center;background:rgba(0,20,45,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--bgold);z-index:900}
+/* HEADER FIXED & CENTERED LOGO */
+header{position:fixed;top:0;left:0;width:100%;padding:15px 36px;display:flex;justify-content:center;align-items:center;background:rgba(0,20,45,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--bgold);z-index:900}
 .hlogo img{height:45px;width:auto;filter:drop-shadow(0 0 10px rgba(212,175,55,.4))}
 
 /* HERO */
@@ -43,6 +43,21 @@ header{position:fixed;top:0;left:0;width:100%;padding:15px 36px;display:flex;ali
 .param-card h3{font-family:var(--fh);font-size:.95rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
 .param-card p{font-size:.95rem;color:var(--muted);line-height:1.6}
 
+/* INTERACTIVE SPIDER GRAPH (RADAR CHART) */
+.spider-graph-wrap{max-width:780px;margin:50px auto;background:rgba(0,20,45,0.8);border:1px solid var(--mint);border-radius:6px;padding:30px;box-shadow:0 0 30px rgba(118,199,176,.1);text-align:center}
+.scanner-header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(118,199,176,.3);padding-bottom:15px;margin-bottom:20px}
+.scanner-title{font-family:var(--fu);font-size:.8rem;color:var(--mint);letter-spacing:3px;text-transform:uppercase}
+.scanner-status{font-family:var(--fh);font-size:1rem;color:var(--gold);animation:pulse 2s infinite}
+@keyframes pulse{0%{opacity:1}50%{opacity:0.5}100%{opacity:1}}
+
+.spider-container{width:100%;height:300px;position:relative;margin-top:20px}
+#radar-chart{width:100%;height:100%}
+/* SVG Radar Styles */
+.radar-grid{stroke:rgba(118,199,176,0.15);stroke-width:0.5;fill:none}
+.radar-axis{stroke:rgba(118,199,176,0.3);stroke-width:1}
+.radar-area{fill:rgba(212,175,55,0.2);stroke:var(--gold);stroke-width:2;transition:points 0.5s ease-in-out}
+.radar-label{font-family:var(--fu);font-size:9px;fill:var(--muted);text-transform:uppercase;letter-spacing:1px}
+
 /* WHITE GLOVE SECTION */
 .white-glove{background:var(--panel);border-top:1px solid var(--bgold);border-bottom:1px solid var(--bgold);padding:70px 32px;text-align:center;position:relative}
 .white-glove::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:100%;background:radial-gradient(circle,rgba(212,175,55,.05) 0%,transparent 70%);pointer-events:none}
@@ -50,20 +65,6 @@ header{position:fixed;top:0;left:0;width:100%;padding:15px 36px;display:flex;ali
 .wg-text{font-size:1.15rem;color:var(--light);max-width:700px;margin:0 auto 20px;line-height:1.8}
 .wg-text strong{color:var(--mint);font-weight:600}
 .wg-signature{font-family:var(--fu);font-size:.85rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:30px}
-
-/* BIOCRITICAL SCANNER APP */
-.scanner-wrap{max-width:780px;margin:50px auto;background:rgba(0,20,45,0.8);border:1px solid var(--mint);border-radius:6px;padding:30px;box-shadow:0 0 30px rgba(118,199,176,.1)}
-.scanner-header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(118,199,176,.3);padding-bottom:15px;margin-bottom:20px}
-.scanner-title{font-family:var(--fu);font-size:.8rem;color:var(--mint);letter-spacing:3px;text-transform:uppercase}
-.scanner-status{font-family:var(--fh);font-size:1rem;color:var(--gold);animation:pulse 2s infinite}
-@keyframes pulse{0%{opacity:1}50%{opacity:0.5}100%{opacity:1}}
-.scanner-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
-.scanner-box{background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.05);padding:15px;border-radius:4px}
-.sb-label{font-family:var(--fu);font-size:.65rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;display:block;margin-bottom:5px}
-.sb-value{font-family:var(--fh);font-size:1.2rem;color:var(--light)}
-.scanner-graph{height:60px;background:repeating-linear-gradient(90deg, transparent, transparent 10px, rgba(118,199,176,0.1) 10px, rgba(118,199,176,0.1) 20px);position:relative;overflow:hidden;border:1px solid rgba(118,199,176,.2);border-radius:4px}
-.graph-line{position:absolute;top:50%;left:-100%;width:50%;height:2px;background:var(--mint);box-shadow:0 0 10px var(--mint);animation:scan 3s linear infinite}
-@keyframes scan{to{left:100%}}
 
 /* FORM SECTION */
 .form-wrap{max-width:780px;margin:0 auto;padding:70px 32px}
@@ -133,7 +134,6 @@ footer{border-top:1px solid var(--bgold);padding:44px 32px;text-align:center}
 header{padding:12px 20px}
 .params-wrap,.form-wrap,.genesis-wrap,.white-glove{padding:50px 18px}
 .t-body{padding:22px 18px}
-.scanner-grid{grid-template-columns:1fr}
 }
 @media(max-width:420px){.param-row{grid-template-columns:1fr}}
 </style>
@@ -181,23 +181,35 @@ header{padding:12px 20px}
   </div>
 </section>
 
-<div class="scanner-wrap">
+<div class="spider-graph-wrap">
   <div class="scanner-header">
-    <span class="scanner-title" id="scan-title">Leitura Biocrítica</span>
+    <span class="scanner-title" id="scan-title">Teia Algorítmica</span>
     <span class="scanner-status" id="scan-status">Aguardando Input...</span>
   </div>
-  <div class="scanner-grid">
-    <div class="scanner-box">
-      <span class="sb-label" id="scan-lbl-alvo">Alvo Detectado</span>
-      <span class="sb-value" id="scan-val-alvo">---</span>
-    </div>
-    <div class="scanner-box">
-      <span class="sb-label" id="scan-lbl-coord">Coordenada Temporal</span>
-      <span class="sb-value" id="scan-val-coord">--/--/---- --:--</span>
-    </div>
-  </div>
-  <div class="scanner-graph">
-    <div class="graph-line" id="scan-line" style="display:none;"></div>
+  
+  <div class="spider-container">
+    <svg id="radar-chart" viewBox="0 0 100 100">
+      <circle class="radar-grid" cx="50" cy="50" r="10"></circle>
+      <circle class="radar-grid" cx="50" cy="50" r="20"></circle>
+      <circle class="radar-grid" cx="50" cy="50" r="30"></circle>
+      <circle class="radar-grid" cx="50" cy="50" r="40"></circle>
+      
+      <line class="radar-axis" x1="50" y1="50" x2="50" y2="10"></line>
+      <line class="radar-axis" x1="50" y1="50" x2="84.6" y2="30"></line>
+      <line class="radar-axis" x1="50" y1="50" x2="84.6" y2="70"></line>
+      <line class="radar-axis" x1="50" y1="50" x2="50" y2="90"></line>
+      <line class="radar-axis" x1="50" y1="50" x2="15.4" y2="70"></line>
+      <line class="radar-axis" x1="50" y1="50" x2="15.4" y2="30"></line>
+      
+      <text class="radar-label" x="50" y="7" text-anchor="middle">Expressão</text>
+      <text class="radar-label" x="87" y="28" text-anchor="start">Alma</text>
+      <text class="radar-label" x="87" y="73" text-anchor="start">Kármico</text>
+      <text class="radar-label" x="50" y="94" text-anchor="middle">Destino</text>
+      <text class="radar-label" x="13" y="73" text-anchor="end">Riqueza</text>
+      <text class="radar-label" x="13" y="28" text-anchor="end">Vetor</text>
+      
+      <polygon id="radar-data" class="radar-area" points="50,50 50,50 50,50 50,50 50,50 50,50"></polygon>
+    </svg>
   </div>
 </div>
 
@@ -228,16 +240,16 @@ header{padding:12px 20px}
       <form id="dossie-form">
         <div class="ig">
           <label for="nome" id="label-nome">NOME COMPLETO DO ALVO</label>
-          <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo..." required oninput="updateScanner()">
+          <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo..." required oninput="updateSpiderGraph()">
         </div>
         <div class="g2">
           <div class="ig">
             <label for="dataNascimento" id="label-data">DATA DE NASCIMENTO</label>
-            <input type="date" id="dataNascimento" name="dataNascimento" required onchange="updateScanner()">
+            <input type="date" id="dataNascimento" name="dataNascimento" required onchange="updateSpiderGraph()">
           </div>
           <div class="ig">
             <label for="horaNascimento" id="label-hora">HORA EXATA</label>
-            <input type="time" id="horaNascimento" name="horaNascimento" required placeholder="Ex: 01:04" onchange="updateScanner()">
+            <input type="time" id="horaNascimento" name="horaNascimento" required placeholder="Ex: 01:04">
           </div>
         </div>
         <div class="g2">
@@ -310,9 +322,9 @@ header{padding:12px 20px}
   <div class="f-copy" id="footer-copy">© 2026 01GURU. Todos os sistemas operacionais reservados.</div>
   <div class="f-links">
     <a href="mailto:contato@01guru.com.br">✉ contato@01guru.com.br</a>
-    <a href="/politica-privacidade.html" id="link-privacy">Política de Privacidade</a>
-    <a href="/politica-cookies.html" id="link-cookies">Política de Cookies</a>
-    <a href="/termos-de-uso.html" id="link-terms">Termos de Uso</a>
+    <a href="/politica-privacidade" id="link-privacy">Política de Privacidade</a>
+    <a href="/politica-cookies" id="link-cookies">Política de Cookies</a>
+    <a href="/termos-de-uso" id="link-terms">Termos de Uso</a>
     <a href="https://billing.stripe.com/p/login/bJe7sN9Tm70QfkV6D11ZS00" id="link-sub">Gerenciar Cancelamento</a>
   </div>
 </footer>
@@ -350,6 +362,7 @@ const translations = {
     'param-date-title':'Data de Nascimento','param-date-desc':'O Código Fonte. Define o Caminho da Vida (Life Path) e ancora matematicamente os ciclos decenais de materialização financeira e provações kármicas.',
     'param-hour-title':'Hora Exata','param-hour-desc':'O portal de ativação. Calibra o Ascendente (ASC). Sem a hora exata, a precisão do seu Firewall Energético cai drasticamente, criando pontos cegos.',
     'param-loc-title':'Cidade, Estado e País','param-loc-desc':'Coordenadas Geobiométricas. A posição planetária exata sobre o local de nascimento gera um Blueprint irreproduzível. Essencial para triangulação de trânsitos.',
+    'scan-title':'Teia Algorítmica',
     'wg-title':'A Assinatura High-Touch',
     'wg-text1':'Em um mercado global infectado pela automação barata, o 01GURU escolheu a exclusividade absoluta. Você não é atendido por um robô de disparo em massa.',
     'wg-text2':'Os cálculos são forjados por inteligência artificial, mas <strong>todo Dossiê, Mapa ou Blueprint é auditado e entregue pessoalmente por mim.</strong> Eu chamo você no seu WhatsApp ou Telegram. Demore o tempo que for necessário para o alinhamento ficar perfeito.',
@@ -359,7 +372,6 @@ const translations = {
     'label-pais':'PAÍS','label-estado':'ESTADO / UF','label-cidade':'CIDADE',
     'label-protocolo':'SELECIONE O PROTOCOLO DE AUDITORIA',
     'btn-submit':'[ EXECUTAR DECIFRAMENTO E ACESSAR CHECKOUT ]',
-    'scan-title':'Leitura Biocrítica','scan-lbl-alvo':'Alvo Detectado','scan-lbl-coord':'Coordenada Temporal',
     'link-privacy':'Política de Privacidade','link-cookies':'Política de Cookies','link-terms':'Termos de Uso','link-sub':'Gerenciar Cancelamento'
   },
   EN:{
@@ -372,6 +384,7 @@ const translations = {
     'param-date-title':'Date of Birth','param-date-desc':'The Source Code. Defines the Life Path and mathematically anchors decennial cycles of financial materialization and karmic trials.',
     'param-hour-title':'Exact Time','param-hour-desc':'The activation portal. Calibrates the Ascendant (ASC). Without the exact hour, the precision of your Energy Firewall drops drastically, creating blind spots.',
     'param-loc-title':'City, State & Country','param-loc-desc':'Geobiometric Coordinates. The exact planetary position over your birth location generates an irreproducible Blueprint. Essential for transit triangulation.',
+    'scan-title':'Algorithmic Web',
     'wg-title':'The High-Touch Signature',
     'wg-text1':'In a global market infected by cheap automation, 01GURU chose absolute exclusivity. You are not served by a mass-firing robot.',
     'wg-text2':'Calculations are forged by artificial intelligence, but <strong>every Dossier, Map, or Blueprint is audited and delivered personally by me.</strong> I contact you on your WhatsApp or Telegram. Take as long as necessary for the alignment to be perfect.',
@@ -381,7 +394,6 @@ const translations = {
     'label-pais':'COUNTRY','label-estado':'STATE / PROVINCE','label-cidade':'CITY',
     'label-protocolo':'SELECT AUDIT PROTOCOL',
     'btn-submit':'[ EXECUTE DECODING & ACCESS CHECKOUT ]',
-    'scan-title':'Biocritical Reading','scan-lbl-alvo':'Detected Target','scan-lbl-coord':'Temporal Coordinate',
     'link-privacy':'Privacy Policy','link-cookies':'Cookie Policy','link-terms':'Terms of Use','link-sub':'Manage Cancellation'
   }
 };
@@ -422,35 +434,6 @@ function setLanguage(lang) {
   const cur = document.getElementById('proto-select').value;
   if (cur) showProtocolDetail(cur);
   updateProtoPrice();
-}
-
-// UPDATE SCANNER APP
-function updateScanner() {
-  const nome = document.getElementById('nome').value;
-  const data = document.getElementById('dataNascimento').value;
-  const hora = document.getElementById('horaNascimento').value;
-  const status = document.getElementById('scan-status');
-  const line = document.getElementById('scan-line');
-  
-  if(nome) {
-      document.getElementById('scan-val-alvo').textContent = nome.toUpperCase();
-  } else {
-      document.getElementById('scan-val-alvo').textContent = '---';
-  }
-
-  if(data || hora) {
-      document.getElementById('scan-val-coord').textContent = `${data || '--/--/----'} ${hora || '--:--'}`;
-  }
-
-  if(nome && data && hora) {
-      status.textContent = currentLanguage === 'PT' ? 'DADOS CAPTURADOS. PRONTO PARA PROCESSAMENTO.' : 'DATA CAPTURED. READY FOR PROCESSING.';
-      status.style.color = 'var(--mint)';
-      line.style.display = 'block';
-  } else {
-      status.textContent = currentLanguage === 'PT' ? 'Aguardando Input...' : 'Awaiting Input...';
-      status.style.color = 'var(--gold)';
-      line.style.display = 'none';
-  }
 }
 
 // LOCATION API MOCK (Simpler for rendering speed)
@@ -509,6 +492,64 @@ function updateProtoPrice() {
   if(id) showProtocolDetail(id);
 }
 
+// SIMULATED BIOCRITICAL SCANNER & SPIDER GRAPH LOGIC
+function getNumerology(str) {
+    if (!str) return 1;
+    const table = { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 1, k: 2, l: 3, m: 4, n: 5, o: 6, p: 7, q: 8, r: 9, s: 1, t: 2, u: 3, v: 4, w: 5, x: 6, y: 7, z: 8 };
+    let sum = str.toLowerCase().replace(/[^a-z]/g, '').split('').reduce((a, b) => a + (table[b] || 0), 0);
+    while (sum > 9) sum = sum.toString().split('').reduce((a, b) => a + parseInt(b), 0);
+    return sum || 1;
+}
+
+function getLifePath(dateStr) {
+    if (!dateStr) return 1;
+    let sum = dateStr.replace(/\D/g, '').split('').reduce((a, b) => a + parseInt(b), 0);
+    while (sum > 9) sum = sum.toString().split('').reduce((a, b) => a + parseInt(b), 0);
+    return sum || 1;
+}
+
+function updateSpiderGraph() {
+    const nome = document.getElementById('nome').value;
+    const data = document.getElementById('dataNascimento').value;
+    const status = document.getElementById('scan-status');
+    const polygon = document.getElementById('radar-data');
+    
+    // Calculate simulated numerology points (Scale 1-9)
+    const expression = getNumerology(nome);
+    const lifePath = getLifePath(data);
+    const soulValue = nome ? ((expression + 3) % 9) || 1 : 1;
+    const karmicValue = data ? ((lifePath + expression) % 9) || 1 : 1;
+    const wealthValue = nome ? ((getNumerology(nome[0]) + lifePath) % 9) || 1 : 1;
+    const vectorValue = nome ? ((expression * lifePath) % 9) || 1 : 1;
+
+    // Wait for full input to activate
+    if (nome && data) {
+        status.textContent = currentLanguage === 'PT' ? 'DADOS CAPTURADOS. GERANDO TEIA...' : 'DATA CAPTURED. GENERATING WEB...';
+        status.style.color = 'var(--mint)';
+        
+        // Define coordinates based on standard SVG radar (radius 40, centered at 50,50)
+        const angles = [0, 60, 120, 180, 240, 300]; // 6 axes
+        const values = [expression, soulValue, karmicValue, lifePath, wealthValue, vectorValue]; // scaled 1-9
+        
+        // Map 1-9 scale to SVG points
+        const points = angles.map((angle, i) => {
+            const rad = (angle - 90) * (Math.PI / 180);
+            const radius = (values[i] / 9) * 40; // Scale 9 up to max radius 40
+            const x = 50 + radius * Math.cos(rad);
+            const y = 50 + radius * Math.sin(rad);
+            return `${x.toFixed(1)},${y.toFixed(1)}`;
+        }).join(' ');
+        
+        polygon.setAttribute('points', points);
+
+    } else {
+        status.textContent = currentLanguage === 'PT' ? 'Aguardando Input...' : 'Awaiting Input...';
+        status.style.color = 'var(--gold)';
+        // Reset to center
+        polygon.setAttribute('points', '50,50 50,50 50,50 50,50 50,50 50,50');
+    }
+}
+
 // STRIPE SUBMIT HANDLER
 document.getElementById('dossie-form').addEventListener('submit', function(e) {
   e.preventDefault();
@@ -531,9 +572,6 @@ document.getElementById('dossie-form').addEventListener('submit', function(e) {
   
   const p = protocols.find(x => x.id === protoId);
   const stripeLink = p.stripeUrl;
-  
-  // Salva no LocalStorage para que o servidor local no terminal saiba quem é quando voltar
-  localStorage.setItem('pending_alvo', JSON.stringify(formData));
   
   // UX Loading
   document.getElementById('loading-overlay').classList.remove('hidden');
