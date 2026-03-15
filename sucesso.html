@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>01GURU | Sincronização Concluída</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<style>
+/* A Paleta de Materialização C-Level */
+:root {
+    --bg-navy: #112236; 
+    --gold-alquimico: #D4AF37;
+    --mint-terminal: #76C7B0;
+    --light: #F8F9FA;
+    --panel: #0a1526;
+    --fh: 'Oswald', sans-serif;
+    --fb: 'Crimson Pro', serif;
+    --fu: 'Inter', sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body { background: var(--bg-navy); color: var(--light); font-family: var(--fb); display: flex; align-items: center; justify-content: center; min-height: 100vh; overflow: hidden; }
+
+.container { text-align: center; background: var(--panel); border: 1px solid rgba(212,175,55,0.3); padding: 60px 40px; border-radius: 8px; max-width: 600px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); animation: dropIn 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+@keyframes dropIn { from { transform: translateY(-30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.hlogo img { height: 60px; filter: drop-shadow(0 0 15px rgba(212,175,55,0.4)); margin-bottom: 30px; }
+.status-badge { display: inline-block; font-family: var(--fu); font-size: 0.75rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--bg-navy); background: var(--mint-terminal); padding: 6px 18px; border-radius: 20px; margin-bottom: 24px; box-shadow: 0 0 15px rgba(118,199,176,0.4); }
+
+h1 { font-family: var(--fh); font-size: 2.4rem; color: var(--gold-alquimico); line-height: 1.1; margin-bottom: 16px; text-transform: uppercase; }
+p { font-size: 1.2rem; color: #A0AAB5; margin-bottom: 40px; line-height: 1.6; }
+strong { color: var(--light); font-weight: 600; }
+
+.cta-btn { display: inline-block; background: var(--gold-alquimico); color: var(--bg-navy); padding: 18px 46px; font-family: var(--fu); font-size: 1rem; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border-radius: 4px; box-shadow: 0 4px 20px rgba(212,175,55,0.3); transition: all 0.3s; }
+.cta-btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 8px 30px rgba(212,175,55,0.5); }
+.warning { font-family: var(--fu); font-size: 0.75rem; color: #A0AAB5; margin-top: 24px; letter-spacing: 1px; }
+
+@media(max-width:600px){ .container { padding: 40px 20px; border-radius: 0; border-left: none; border-right: none; } h1 { font-size: 2rem; } }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="hlogo">
+        <img src="/static/img/01GURU_SF.PNG" alt="01GURU">
+    </div>
+    
+    <div class="status-badge">DOCUMENTO FORJADO COM SUCESSO</div>
+    
+    <h1>Sua mente agora está na matriz.</h1>
+    <p>O seu PDF Tático já foi baixado. Para ativar a sua inteligência diária e plugar o seu sistema ao nosso <strong>Motor de Retenção C-Level</strong>, você precisa acionar o seu terminal móvel.</p>
+    
+    <a href="{{ link_telegram }}" class="cta-btn">[ INICIAR POSSESSÃO NO TELEGRAM ]</a>
+    
+    <div class="warning">Criptografia Ativada. Este link é único e intransferível.</div>
+</div>
+
+</body>
+</html>
