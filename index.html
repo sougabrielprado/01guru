@@ -5,33 +5,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>01GURU | Diagnóstico de Sistema Vital</title>
 <meta name="description" content="01GURU — Gabinete de Inteligência Humana e Vibracional.">
-<link rel="icon" type="image/png" href="/static/img/favicon.png">
-<link rel="apple-touch-icon" href="/static/img/favicon.png">
+<link rel="icon" type="image/png" href="./static/img/favicon.png">
+<link rel="apple-touch-icon" href="./static/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#00142D;--panel:#00213D;--gold:#D4AF37;--gold2:#b8960c;--mint:#76C7B0;--light:#F8F9FA;--muted:#A0AAB5;--bglass:rgba(255,255,255,0.03);--bgold:rgba(212,175,55,0.25);--bmint:rgba(118,199,176,0.25);--fh:'Oswald',sans-serif;--fb:'Crimson Pro',serif;--fu:'Inter',sans-serif}
+:root{--bg:#00142D;--panel:#00213D;--gold:#D4AF37;--mint:#76C7B0;--light:#F8F9FA;--muted:#A0AAB5;--bgold:rgba(212,175,55,0.25);--bmint:rgba(118,199,176,0.25);--fh:'Oswald',sans-serif;--fb:'Crimson Pro',serif;--fu:'Inter',sans-serif}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--light);font-family:var(--fb);font-size:17px;line-height:1.7;overflow-x:hidden}
 
 /* LANG */
-.lang-toggle{position:fixed;top:18px;right:22px;z-index:1000;display:flex;gap:4px;background:rgba(0,33,61,.92);backdrop-filter:blur(8px);border:1px solid var(--bgold);border-radius:6px;padding:4px}
-.lang-btn{background:transparent;color:var(--muted);border:none;padding:6px 14px;font-family:var(--fu);font-size:.72rem;font-weight:700;letter-spacing:1px;cursor:pointer;border-radius:4px;transition:all .2s}
+.lang-toggle{position:absolute;top:18px;right:22px;z-index:1000;display:flex;gap:4px;background:rgba(0,33,61,.92);border:1px solid var(--bgold);border-radius:6px;padding:4px}
+.lang-btn{background:transparent;color:var(--muted);border:none;padding:6px 14px;font-family:var(--fu);font-size:.72rem;font-weight:700;cursor:pointer;border-radius:4px;transition:all .2s}
 .lang-btn.active{background:var(--gold);color:var(--bg)}
-.lang-btn:hover:not(.active){color:var(--gold)}
 
-/* HEADER FIXED & CENTERED LOGO */
-header{position:fixed;top:0;left:0;width:100%;padding:15px 36px;display:flex;justify-content:center;align-items:center;background:rgba(0,20,45,0.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--bgold);z-index:900}
-.hlogo img{height:45px;width:auto;filter:drop-shadow(0 0 10px rgba(212,175,55,.4))}
-
-/* HERO */
-.hero{text-align:center;padding:120px 24px 50px;position:relative;overflow:hidden}
-.hero::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:800px;height:100%;background:radial-gradient(circle,rgba(118,199,176,.06) 0%,transparent 70%);pointer-events:none}
+/* HERO & LOGO PARADO NO CENTRO */
+.hero{text-align:center;padding:80px 24px 50px;position:relative}
+.hero-logo{margin-bottom: 30px;}
+.hero-logo img{width: 180px; height: auto; filter: drop-shadow(0 0 15px rgba(212,175,55,.3));}
 .badge{display:inline-block;font-family:var(--fu);font-size:.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--mint);border:1px solid var(--bmint);padding:5px 16px;border-radius:20px;margin-bottom:22px}
 .hero h1{font-family:var(--fh);font-size:clamp(2rem,5vw,3.6rem);color:var(--gold);line-height:1.1;margin-bottom:18px}
 .hero p{font-size:1.15rem;color:var(--muted);max-width:600px;margin:0 auto 36px}
-.cta-btn{display:inline-block;background:var(--mint);color:var(--bg);padding:16px 42px;font-family:var(--fu);font-size:.9rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer;box-shadow:0 4px 18px rgba(118,199,176,.3);transition:all .3s}
+.cta-btn{display:inline-block;background:var(--mint);color:var(--bg);padding:16px 42px;font-family:var(--fu);font-size:.9rem;font-weight:800;letter-spacing:2px;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer;transition:all .3s}
 .cta-btn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 8px 28px rgba(118,199,176,.5)}
 
 /* PARAMETERS */
@@ -41,30 +37,25 @@ header{position:fixed;top:0;left:0;width:100%;padding:15px 36px;display:flex;jus
 .param-row{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
 .param-card{background:var(--panel);border:1px solid var(--bgold);border-radius:6px;padding:24px 20px}
 .param-card h3{font-family:var(--fh);font-size:.95rem;color:var(--gold);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px}
-.param-card p{font-size:.95rem;color:var(--muted);line-height:1.6}
 
-/* INTERACTIVE SPIDER GRAPH (RADAR CHART) */
-.spider-graph-wrap{max-width:780px;margin:50px auto;background:rgba(0,20,45,0.8);border:1px solid var(--mint);border-radius:6px;padding:30px;box-shadow:0 0 30px rgba(118,199,176,.1);text-align:center}
-.scanner-header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(118,199,176,.3);padding-bottom:15px;margin-bottom:20px}
+/* SPIDER GRAPH (TEIA ANIMADA) */
+.spider-graph-wrap{max-width:780px;margin:50px auto;background:rgba(0,20,45,0.8);border:1px solid var(--mint);border-radius:6px;padding:30px;text-align:center}
+.scanner-header{display:flex;justify-content:space-between;border-bottom:1px solid rgba(118,199,176,.3);padding-bottom:15px;margin-bottom:20px}
 .scanner-title{font-family:var(--fu);font-size:.8rem;color:var(--mint);letter-spacing:3px;text-transform:uppercase}
-.scanner-status{font-family:var(--fh);font-size:1rem;color:var(--gold);animation:pulse 2s infinite}
-@keyframes pulse{0%{opacity:1}50%{opacity:0.5}100%{opacity:1}}
-
-.spider-container{width:100%;height:300px;position:relative;margin-top:20px}
-#radar-chart{width:100%;height:100%}
-/* SVG Radar Styles */
+.scanner-status{font-family:var(--fh);font-size:1rem;color:var(--gold);}
+.spider-container{width:100%;height:320px;position:relative;margin-top:20px}
 .radar-grid{stroke:rgba(118,199,176,0.15);stroke-width:0.5;fill:none}
 .radar-axis{stroke:rgba(118,199,176,0.3);stroke-width:1}
-.radar-area{fill:rgba(212,175,55,0.2);stroke:var(--gold);stroke-width:2;transition:points 0.5s ease-in-out}
-.radar-label{font-family:var(--fu);font-size:9px;fill:var(--muted);text-transform:uppercase;letter-spacing:1px}
+.radar-label{font-family:var(--fu);font-size:8px;fill:var(--muted);text-transform:uppercase;letter-spacing:1px}
+/* A MÁGICA DA ANIMAÇÃO ESTÁ AQUI */
+.radar-area{fill:rgba(212,175,55,0.25);stroke:var(--gold);stroke-width:2; transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);}
 
 /* WHITE GLOVE SECTION */
-.white-glove{background:var(--panel);border-top:1px solid var(--bgold);border-bottom:1px solid var(--bgold);padding:70px 32px;text-align:center;position:relative}
-.white-glove::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:100%;background:radial-gradient(circle,rgba(212,175,55,.05) 0%,transparent 70%);pointer-events:none}
+.white-glove{background:var(--panel);border-top:1px solid var(--bgold);border-bottom:1px solid var(--bgold);padding:70px 32px;text-align:center}
 .wg-title{font-family:var(--fh);font-size:2rem;color:var(--gold);margin-bottom:20px;text-transform:uppercase;letter-spacing:2px}
-.wg-text{font-size:1.15rem;color:var(--light);max-width:700px;margin:0 auto 20px;line-height:1.8}
-.wg-text strong{color:var(--mint);font-weight:600}
-.wg-signature{font-family:var(--fu);font-size:.85rem;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-top:30px}
+.wg-text{font-size:1.15rem;color:var(--light);max-width:700px;margin:0 auto 20px}
+.wg-text strong{color:var(--mint)}
+.wg-signature{font-family:var(--fu);font-size:.85rem;color:var(--muted);letter-spacing:2px;margin-top:30px}
 
 /* FORM SECTION */
 .form-wrap{max-width:780px;margin:0 auto;padding:70px 32px}
@@ -72,69 +63,37 @@ header{position:fixed;top:0;left:0;width:100%;padding:15px 36px;display:flex;jus
 .t-head{background:var(--bg);border-bottom:1px solid var(--bgold);padding:13px 22px;display:flex;align-items:center;gap:8px}
 .tdot{width:10px;height:10px;border-radius:50%}
 .tdr{background:#ff5f57}.tda{background:#febc2e}.tdg{background:#28c840}
-.ttitle{font-family:var(--fu);font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-left:8px}
 .t-body{padding:32px 30px}
-
-/* FORM ELEMENTS */
 .ig{margin-bottom:22px}
-.ig label{display:block;font-family:var(--fu);font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:7px}
-.ig input,.ig select{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--bgold);color:var(--light);padding:13px 16px;font-family:var(--fb);font-size:1.05rem;border-radius:4px;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none}
-.ig input:focus,.ig select:focus{outline:none;border-color:var(--mint);box-shadow:0 0 0 3px rgba(118,199,176,.1)}
-.ig select option{background:#fff;color:#111}
-
+.ig label{display:block;font-family:var(--fu);font-size:.68rem;font-weight:700;letter-spacing:2px;color:var(--gold);margin-bottom:7px}
+.ig input,.ig select{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--bgold);color:var(--light);padding:13px 16px;font-family:var(--fb);font-size:1.05rem;border-radius:4px;}
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-input[type="date"]::-webkit-calendar-picker-indicator{filter:invert(1) opacity(.5);cursor:pointer}
+input[type="date"]::-webkit-calendar-picker-indicator{filter:invert(1) opacity(.5)}
 
-/* PROTOCOL SELECTOR */
-.proto-label{font-family:var(--fu);font-size:.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:7px;display:block;margin-top:32px}
-.proto-select-wrap select{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--bgold);color:var(--light);padding:13px 16px;font-family:var(--fb);font-size:1.05rem;border-radius:4px;transition:border-color .2s;-webkit-appearance:none;appearance:none;cursor:pointer}
-.proto-select-wrap select:focus{outline:none;border-color:var(--mint);box-shadow:0 0 0 3px rgba(118,199,176,.1)}
-.proto-select-wrap select option{background:#fff;color:#111}
-
-
-/* PROTOCOL DETAIL CARD */
-#proto-detail{display:none;margin-top:20px;background:rgba(212,175,55,.05);border:1px solid var(--gold);border-radius:6px;padding:24px;animation:fadeIn .3s ease}
-#proto-detail.featured-god{border-color:var(--gold);background:rgba(212,175,55,.08)}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-.pd-title{font-family:var(--fh);font-size:1.3rem;color:var(--gold);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
-.pd-desc{font-size:1rem;color:var(--light);margin-bottom:16px;line-height:1.6}
-.pd-contents{font-family:var(--fu);font-size:.82rem;color:var(--muted);background:rgba(0,0,0,.2);padding:14px 18px;border-radius:4px;margin-bottom:18px;line-height:1.8}
-.pd-contents strong{color:var(--mint);display:block;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px;font-size:.7rem}
-.pd-price-block{display:flex;flex-direction:column;gap:4px}
+.proto-label{display:block;margin-top:32px}
+#proto-detail{display:none;margin-top:20px;background:rgba(212,175,55,.05);border:1px solid var(--gold);border-radius:6px;padding:24px}
+.pd-title{font-family:var(--fh);font-size:1.3rem;color:var(--gold);margin-bottom:10px}
+.pd-desc{margin-bottom:16px}
+.pd-contents{font-family:var(--fu);font-size:.82rem;background:rgba(0,0,0,.2);padding:14px;border-radius:4px;margin-bottom:18px}
 .pd-price-main{font-family:var(--fh);font-size:1.6rem;color:var(--mint)}
-#proto-detail.featured-god .pd-price-main{color:var(--gold);font-size:1.9rem}
-.pd-price-sub{font-family:var(--fu);font-size:.8rem;color:var(--muted)}
 
-/* SUBMIT */
-#btn-submit{width:100%;background:var(--mint);color:var(--bg);border:none;padding:17px;font-family:var(--fu);font-size:.88rem;font-weight:800;letter-spacing:3px;text-transform:uppercase;cursor:pointer;border-radius:4px;margin-top:24px;box-shadow:0 4px 18px rgba(118,199,176,.2);transition:all .3s}
-#btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(118,199,176,.4)}
+#btn-submit{width:100%;background:var(--mint);color:var(--bg);border:none;padding:17px;font-family:var(--fu);font-size:.88rem;font-weight:800;letter-spacing:3px;cursor:pointer;border-radius:4px;margin-top:24px;}
 
 /* GENESIS */
 .genesis-wrap{max-width:780px;margin:0 auto;padding:70px 32px;border-top:1px solid var(--bgold)}
-.genesis-wrap p{font-family:var(--fb);font-size:1.25rem;line-height:1.85;text-align:justify;margin-bottom:26px;color:var(--light)}
+.genesis-wrap p{font-size:1.25rem;margin-bottom:26px}
 
 /* FOOTER */
 footer{border-top:1px solid var(--bgold);padding:44px 32px;text-align:center}
-.f-exec{font-family:var(--fh);font-size:.82rem;letter-spacing:1px;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
-.f-copy{font-family:var(--fu);font-size:.78rem;color:var(--muted);margin-bottom:18px}
-.f-links{display:flex;justify-content:center;gap:22px;flex-wrap:wrap}
-.f-links a{font-family:var(--fu);font-size:.78rem;color:var(--muted);text-decoration:none;transition:color .2s}
-.f-links a:hover{color:var(--mint)}
+.f-exec{font-family:var(--fh);font-size:.82rem;color:var(--gold);margin-bottom:10px}
+.f-links{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin-top:20px;}
+.f-links a{font-family:var(--fu);font-size:.78rem;color:var(--muted);text-decoration:none;}
 
-/* LOADING */
-.hidden{display:none!important}
-#loading-overlay{position:fixed;inset:0;background:rgba(0,20,45,.97);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:18px}
+#loading-overlay{display:none;position:fixed;inset:0;background:rgba(0,20,45,.97);z-index:9999;align-items:center;justify-content:center;flex-direction:column}
 .spinner{width:46px;height:46px;border:3px solid var(--bgold);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-#loading-overlay h3{font-family:var(--fh);color:var(--gold);letter-spacing:2px;text-transform:uppercase}
 
-@media(max-width:700px){
-.param-row{grid-template-columns:1fr 1fr}
-.g2{grid-template-columns:1fr}
-header{padding:12px 20px}
-.params-wrap,.form-wrap,.genesis-wrap,.white-glove{padding:50px 18px}
-.t-body{padding:22px 18px}
-}
+@media(max-width:700px){.param-row{grid-template-columns:1fr 1fr}.g2{grid-template-columns:1fr}}
 @media(max-width:420px){.param-row{grid-template-columns:1fr}}
 </style>
 </head>
@@ -145,40 +104,14 @@ header{padding:12px 20px}
   <button class="lang-btn" onclick="setLanguage('EN')">EN</button>
 </div>
 
-<header>
-  <div class="hlogo">
-    <img src="/static/img/01GURU_SF.PNG" alt="01GURU">
-  </div>
-</header>
-
 <section class="hero">
+  <div class="hero-logo">
+    <img src="./static/img/01GURU_SF.PNG" alt="01GURU">
+  </div>
   <div class="badge" id="tag-decodificacao">O Processador de Consciência Coletiva</div>
   <h1 id="hero-title">Dados não mentem.<br>Os astros também não.</h1>
-  <p id="hero-subtitle">O fim do esoterismo passivo. Cruzamos suas coordenadas exatas de nascimento com os maiores algoritmos de timing do mundo para forjar rotas matemáticas de materialização e proteção.</p>
-  <button class="cta-btn" onclick="document.getElementById('terminal-section').scrollIntoView({behavior:'smooth'})" id="cta-button">[ INICIAR DIAGNÓSTICO ]</button>
-</section>
-
-<section class="params-wrap">
-  <div class="sec-label">Precisão Cirúrgica</div>
-  <h2 class="sec-title" id="param-title">A Engenharia dos Seus Parâmetros</h2>
-  <div class="param-row">
-    <div class="param-card">
-      <h3 id="param-name-title">Nome Completo</h3>
-      <p id="param-name-desc">O identificador vibratório primário. Codifica o Número de Expressão e Desejo da Alma. É a frequência exata da sua assinatura no mundo.</p>
-    </div>
-    <div class="param-card">
-      <h3 id="param-date-title">Data de Nascimento</h3>
-      <p id="param-date-desc">O Código Fonte. Define o Caminho da Vida (Life Path) e ancora matematicamente os ciclos decenais de materialização financeira e provações kármicas.</p>
-    </div>
-    <div class="param-card">
-      <h3 id="param-hour-title">Hora Exata</h3>
-      <p id="param-hour-desc">O portal de ativação. Calibra o Ascendente (ASC). Sem a hora exata, a precisão do seu Firewall Energético cai drasticamente, criando pontos cegos.</p>
-    </div>
-    <div class="param-card">
-      <h3 id="param-loc-title">Cidade, Estado e País</h3>
-      <p id="param-loc-desc">Coordenadas Geobiométricas. A posição planetária exata sobre o local de nascimento gera um Blueprint irreproduzível. Essencial para triangulação de trânsitos.</p>
-    </div>
-  </div>
+  <p id="hero-subtitle">Cruzamos suas coordenadas exatas de nascimento com os maiores algoritmos de timing do mundo para forjar rotas matemáticas de materialização.</p>
+  <button class="cta-btn" onclick="document.getElementById('terminal-section').scrollIntoView({behavior:'smooth'})">[ INICIAR DIAGNÓSTICO ]</button>
 </section>
 
 <div class="spider-graph-wrap">
@@ -186,14 +119,12 @@ header{padding:12px 20px}
     <span class="scanner-title" id="scan-title">Teia Algorítmica</span>
     <span class="scanner-status" id="scan-status">Aguardando Input...</span>
   </div>
-  
   <div class="spider-container">
     <svg id="radar-chart" viewBox="0 0 100 100">
       <circle class="radar-grid" cx="50" cy="50" r="10"></circle>
       <circle class="radar-grid" cx="50" cy="50" r="20"></circle>
       <circle class="radar-grid" cx="50" cy="50" r="30"></circle>
       <circle class="radar-grid" cx="50" cy="50" r="40"></circle>
-      
       <line class="radar-axis" x1="50" y1="50" x2="50" y2="10"></line>
       <line class="radar-axis" x1="50" y1="50" x2="84.6" y2="30"></line>
       <line class="radar-axis" x1="50" y1="50" x2="84.6" y2="70"></line>
@@ -204,7 +135,7 @@ header{padding:12px 20px}
       <text class="radar-label" x="50" y="7" text-anchor="middle">Expressão</text>
       <text class="radar-label" x="87" y="28" text-anchor="start">Alma</text>
       <text class="radar-label" x="87" y="73" text-anchor="start">Kármico</text>
-      <text class="radar-label" x="50" y="94" text-anchor="middle">Destino</text>
+      <text class="radar-label" x="50" y="96" text-anchor="middle">Destino</text>
       <text class="radar-label" x="13" y="73" text-anchor="end">Riqueza</text>
       <text class="radar-label" x="13" y="28" text-anchor="end">Vetor</text>
       
@@ -213,97 +144,66 @@ header{padding:12px 20px}
   </div>
 </div>
 
+<section class="params-wrap">
+  <div class="sec-label">Precisão Cirúrgica</div>
+  <h2 class="sec-title" id="param-title">A Engenharia dos Seus Parâmetros</h2>
+  <div class="param-row">
+    <div class="param-card"><h3>Nome Completo</h3><p>O identificador vibratório primário da sua assinatura no mundo.</p></div>
+    <div class="param-card"><h3>Data de Nascimento</h3><p>O Código Fonte. Define matematicamente os ciclos de materialização.</p></div>
+    <div class="param-card"><h3>Hora Exata</h3><p>O portal de ativação que calibra o seu Firewall Energético.</p></div>
+    <div class="param-card"><h3>Localização</h3><p>Coordenadas Geobiométricas. Essencial para triangulação de trânsitos.</p></div>
+  </div>
+</section>
+
 <section class="white-glove">
-  <h2 class="wg-title" id="wg-title">A Assinatura High-Touch</h2>
-  <p class="wg-text" id="wg-text1">Em um mercado global infectado pela automação barata, o 01GURU escolheu a exclusividade absoluta. Você não é atendido por um robô de disparo em massa.</p>
-  <p class="wg-text" id="wg-text2">Os cálculos são forjados por inteligência artificial, mas <strong>todo Dossiê, Mapa ou Blueprint é auditado e entregue pessoalmente por mim.</strong> Eu chamo você no seu WhatsApp ou Telegram. Demore o tempo que for necessário para o alinhamento ficar perfeito.</p>
+  <h2 class="wg-title">A Assinatura High-Touch</h2>
+  <p class="wg-text">Em um mercado global infectado pela automação barata, o 01GURU escolheu a exclusividade absoluta.</p>
+  <p class="wg-text">Os cálculos são forjados por inteligência artificial, mas <strong>todo Dossiê ou Blueprint é auditado e entregue pessoalmente por mim.</strong></p>
   <div class="wg-signature">GABRIEL PRADO | ENGENHEIRO DE OPERAÇÕES</div>
 </section>
 
 <section class="genesis-wrap">
   <div class="sec-label">Nossa Origem</div>
-  <h2 class="sec-title" id="genesis-title">A Gênese do 01GURU</h2>
-  <p id="genesis-p1">O 01GURU não é uma consultoria mística; é um Gabinete de Inteligência Humana e Vibracional. Nascemos da fusão brutal entre a lógica binária dos dados (01) e a precisão inegável dos ciclos cósmicos (GURU).</p>
-  <p id="genesis-p2">Sob a arquitetura de Gabriel Prado — Estrategista Sênior e Engenheiro de Operações — o sistema foi forjado para uma única missão: transformar o esoterismo passivo em uma ferramenta tática de materialização e lucro.</p>
-  <p id="genesis-p3">Não lemos o seu futuro para confortar o seu ego. Nós auditamos o seu sistema vital, debugamos as suas falhas repetitivas e entregamos a rota matemática exata para o topo.</p>
+  <h2 class="sec-title">A Gênese do 01GURU</h2>
+  <p>Nascemos da fusão brutal entre a lógica binária dos dados (01) e a precisão inegável dos ciclos cósmicos (GURU). Transformamos o esoterismo passivo em uma ferramenta tática de materialização e lucro.</p>
 </section>
 
 <section id="terminal-section" class="form-wrap">
   <div class="sec-label">Acesso Restrito</div>
-  <h2 class="sec-title" id="form-title">Terminal de Inserção de Parâmetros</h2>
+  <h2 class="sec-title">Terminal de Inserção de Parâmetros</h2>
   <div class="terminal-box">
-    <div class="t-head">
-      <div class="tdot tdr"></div><div class="tdot tda"></div><div class="tdot tdg"></div>
-      <span class="ttitle">01GURU // DIAGNOSTIC ENGINE v2.6</span>
-    </div>
+    <div class="t-head"><div class="tdot tdr"></div><div class="tdot tda"></div><div class="tdot tdg"></div></div>
     <div class="t-body">
       <form id="dossie-form">
         <div class="ig">
-          <label for="nome" id="label-nome">NOME COMPLETO DO ALVO</label>
-          <input type="text" id="nome" name="nome" placeholder="Digite seu nome completo..." required oninput="updateSpiderGraph()">
+          <label>NOME COMPLETO DO ALVO</label>
+          <input type="text" id="nome" required oninput="animarTeia()">
         </div>
         <div class="g2">
           <div class="ig">
-            <label for="dataNascimento" id="label-data">DATA DE NASCIMENTO</label>
-            <input type="date" id="dataNascimento" name="dataNascimento" required onchange="updateSpiderGraph()">
+            <label>DATA DE NASCIMENTO</label>
+            <input type="date" id="dataNascimento" required oninput="animarTeia()">
           </div>
           <div class="ig">
-            <label for="horaNascimento" id="label-hora">HORA EXATA</label>
-            <input type="time" id="horaNascimento" name="horaNascimento" required placeholder="Ex: 01:04">
+            <label>HORA EXATA</label>
+            <input type="time" id="horaNascimento" required>
           </div>
-        </div>
-        <div class="g2">
-          <div class="ig">
-            <label for="pais" id="label-pais">PAÍS</label>
-            <select id="pais" name="pais" required>
-              <option value="">Selecione o País</option>
-            </select>
-          </div>
-          <div class="ig">
-            <label for="estado" id="label-estado">ESTADO / UF</label>
-            <select id="estado" name="estado" required disabled>
-              <option value="">Aguardando País...</option>
-            </select>
-          </div>
-        </div>
-        <div class="ig">
-          <label for="cidade" id="label-cidade">CIDADE</label>
-          <select id="cidade" name="cidade" required disabled>
-            <option value="">Aguardando Estado...</option>
-          </select>
         </div>
 
-        <label class="proto-label" id="label-protocolo">SELECIONE O PROTOCOLO DE AUDITORIA</label>
-        <div class="proto-select-wrap">
-          <select id="proto-select" onchange="showProtocolDetail(this.value)">
+        <label class="proto-label">SELECIONE O PROTOCOLO DE AUDITORIA</label>
+        <div class="ig">
+          <select id="proto-select" onchange="showProtocolDetail(this.value)" required>
             <option value="">-- Escolha o Protocolo --</option>
+            <option value="1">Briefing Diário (R$ 19,90)</option>
+            <option value="4">Sinastria & Algoritmo do Amor (R$ 97,00)</option>
+            <option value="16">DOSSIÊ TÁTICO GOD MODE (R$ 497,00)</option>
           </select>
         </div>
-        <input type="hidden" id="protocolo-hidden" name="protocolo">
+        <input type="hidden" id="protocolo-hidden">
 
         <div id="proto-detail">
           <div class="pd-title" id="pd-title"></div>
-          <div class="pd-desc" id="pd-desc"></div>
-          <div class="pd-contents">
-            <strong id="pd-includes-label">O QUE VOCÊ RECEBE NO PDF</strong>
-            <span id="pd-includes"></span>
-          </div>
-
-          <div id="partner-fields" style="display:none; margin-top:20px; padding-top:20px; border-top:1px solid rgba(212,175,55,0.2);">
-            <div class="ig">
-              <label for="parceiro-nome" id="label-partner-name">NOME COMPLETO DO PARCEIRO(A)</label>
-              <input type="text" id="parceiro-nome" placeholder="Digite o nome do parceiro(a)">
-            </div>
-            <div class="ig">
-              <label for="parceiro-data" id="label-partner-date">DATA DE NASCIMENTO DO PARCEIRO(A)</label>
-              <input type="date" id="parceiro-data">
-            </div>
-          </div>
-
-          <div class="pd-price-block">
-            <div class="pd-price-main" id="pd-price"></div>
-            <div class="pd-price-sub" id="pd-price-sub"></div>
-          </div>
+          <div class="pd-price-main" id="pd-price"></div>
         </div>
 
         <button type="submit" id="btn-submit">[ EXECUTAR DECIFRAMENTO E ACESSAR CHECKOUT ]</button>
@@ -312,281 +212,90 @@ header{padding:12px 20px}
   </div>
 </section>
 
-<div id="loading-overlay" class="hidden">
+<div id="loading-overlay">
   <div class="spinner"></div>
-  <h3 id="loading-text">Conectando ao Gateway de Segurança Stripe...</h3>
+  <h3 style="color:#D4AF37; margin-top:20px;">Conectando ao Gateway Stripe...</h3>
 </div>
 
 <footer>
-  <div class="f-exec" id="footer-exec">Documento Executivo | Op: Gabriel Prado Rodrigues | CRA-RS TE-002457/O</div>
-  <div class="f-copy" id="footer-copy">© 2026 01GURU. Todos os sistemas operacionais reservados.</div>
+  <div class="f-exec">Gabriel Prado Rodrigues | CRA-RS TE-002457/O</div>
+  <div style="font-size:0.8rem; color:#A0AAB5;">© 2026 01GURU. Todos os sistemas reservados.</div>
   <div class="f-links">
-    <a href="mailto:contato@01guru.com.br">✉ contato@01guru.com.br</a>
-    <a href="/politica-privacidade" id="link-privacy">Política de Privacidade</a>
-    <a href="/politica-cookies" id="link-cookies">Política de Cookies</a>
-    <a href="/termos-de-uso" id="link-terms">Termos de Uso</a>
-    <a href="https://billing.stripe.com/p/login/bJe7sN9Tm70QfkV6D11ZS00" id="link-sub">Gerenciar Cancelamento</a>
+    <a href="mailto:contato@01guru.com.br">contato@01guru.com.br</a>
+    <a href="./politica-privacidade.html">Política de Privacidade</a>
+    <a href="./politica-cookies.html">Política de Cookies</a>
+    <a href="./termos-de-uso.html">Termos de Uso</a>
+    <a href="https://billing.stripe.com/p/login/bJe7sN9Tm70QfkV6D11ZS00">Gerenciar Assinatura</a>
   </div>
 </footer>
 
 <script>
-let currentLanguage = 'PT';
-
-const protocols = [
-  {id:'1', pt:'Briefing Diário', en:'Daily Briefing', descPt:'Auditoria matinal do seu sistema biocrítico.', descEn:'Morning audit of your biocritical system.', includesPt:'· Análise dos regentes\n· Alerta de janelas', includesEn:'· Daily rulers\n· Opportunity alerts', brl:19.90, usd:5.00, stripeUrl:'https://buy.stripe.com/9B628t1mQ1Gw0q1e5t1ZS0n'},
-  {id:'2', pt:'Sprint Semanal', en:'Weekly Sprint', descPt:'Planejamento tático de 7 dias.', descEn:'7-day tactical planning.', includesPt:'· Mapa semanal\n· Sugestões táticas', includesEn:'· Weekly map\n· Tactical suggestions', brl:27.00, usd:7.00, stripeUrl:'https://buy.stripe.com/9B69AV3uY2KAgoZ2mL1ZS0o'},
-  {id:'3', pt:'Relatório de Trânsitos Ativos', en:'Active Transits', descPt:'Detecção de anomalias espaciais.', descEn:'Spatial anomaly detection.', includesPt:'· Trânsitos planetários\n· Janelas de risco', includesEn:'· Planetary transits\n· Risk windows', brl:37.00, usd:9.00, stripeUrl:'https://buy.stripe.com/00w8wR1mQeti7Stf9x1ZS07'},
-  {id:'4', pt:'Sinastria & Algoritmo do Amor', en:'Synastry & Love Algorithm', descPt:'Auditagem de compatibilidade vibracional.', descEn:'Vibrational compatibility audit.', includesPt:'· Análise de sinastria\n· Pontos de atrito', includesEn:'· Synastry analysis\n· Friction points', brl:97.00, usd:27.00, stripeUrl:'https://buy.stripe.com/8x2bJ35D62KA7St8L91ZS09'},
-  {id:'5', pt:'Firewall Pessoal', en:'Personal Firewall', descPt:'Blindagem energética contra ataques.', descEn:'Energetic shielding.', includesPt:'· Vulnerabilidades\n· Agentes de drenagem', includesEn:'· Vulnerabilities\n· Drain agents', brl:97.00, usd:27.00, stripeUrl:'https://buy.stripe.com/4gM5kF3uY98Y5Kl1iH1ZS0a'},
-  {id:'6', pt:'Auditoria de Carreira', en:'Career Audit', descPt:'Otimize seu motor financeiro.', descEn:'Optimize financial engine.', includesPt:'· Casas financeiras\n· Timing para carreira', includesEn:'· Financial houses\n· Career timing', brl:97.00, usd:27.00, stripeUrl:'https://buy.stripe.com/8x2aEZ0iMad2goZ5yX1ZS0b'},
-  {id:'7', pt:'Protocolos de Ativação', en:'Activation Protocols', descPt:'Comandos práticos para mudar sua realidade.', descEn:'Practical reality commands.', includesPt:'· Rituais personalizados\n· Afirmações', includesEn:'· Personalized rituals\n· Affirmations', brl:97.00, usd:27.00, stripeUrl:'https://buy.stripe.com/5kQ14p6Hafxm4GhgdB1ZS0c'},
-  {id:'8', pt:'Roadmap Tático Anual', en:'Annual Tactical Roadmap', descPt:'Seu plano de guerra de 12 meses.', descEn:'Your 12-month war plan.', includesPt:'· Previsão mês a mês\n· Janelas de expansão', includesEn:'· Month-by-month forecast\n· Expansion windows', brl:147.00, usd:37.00, stripeUrl:'https://buy.stripe.com/28EcN77LegBq3Cde5t1ZS0d'},
-  {id:'9', pt:'Auditoria de Código Natal', en:'Natal Code Audit', descPt:'O manual técnico do seu nascimento.', descEn:'Birth technical manual.', includesPt:'· Mapa natal comentado\n· Talentos ocultos', includesEn:'· Commented natal chart\n· Hidden talents', brl:197.00, usd:47.00, stripeUrl:'https://buy.stripe.com/bJeeVf2qU4SI8Wxf9x1ZS0e'},
-  {id:'10', pt:'Algoritmo de Destino', en:'Destiny Algorithm', descPt:'A matemática sagrada que rege seu caminho.', descEn:'Sacred path math.', includesPt:'· Caminho de Vida\n· Ciclos pessoais', includesEn:'· Life Path\n· Personal cycles', brl:197.00, usd:47.00, stripeUrl:'https://buy.stripe.com/bJe8wR5D6ad2egRd1p1ZS0f'},
-  {id:'11', pt:'Debugging Kármico', en:'Karmic Debugging', descPt:'Varredura em falhas ancestrais.', descEn:'Ancestral flaw scan.', includesPt:'· Nós lunares\n· Protocolo de limpeza', includesEn:'· Lunar nodes\n· Clearing protocol', brl:197.00, usd:47.00, stripeUrl:'https://buy.stripe.com/aFadRb6Hadpe2y9gdB1ZS0g'},
-  {id:'12', pt:'Engenharia de Riqueza', en:'Wealth Engineering', descPt:'Design avançado para construção de patrimônio.', descEn:'Advanced wealth design.', includesPt:'· Casas de dinheiro\n· Estratégia de acumulação', includesEn:'· Money houses\n· Accumulation strategy', brl:247.00, usd:57.00, stripeUrl:'https://buy.stripe.com/bJe8wR3uYad2goZ1iH1ZS0h'},
-  {id:'13', pt:'Projeção Macro de 5 Anos', en:'5-Year Macro Projection', descPt:'Visão estratégica de longo prazo.', descEn:'Long-term strategic vision.', includesPt:'· Progressões secundárias\n· Plano de posicionamento', includesEn:'· Secondary progressions\n· Positioning plan', brl:247.00, usd:57.00, stripeUrl:'https://buy.stripe.com/6oUaEZ8Piad2goZf9x1ZS0i'},
-  {id:'14', pt:'Atualização Rev. Solar 26/27', en:'Solar Rev. 26/27 Update', descPt:'Upgrade de sistema para seu próximo ano.', descEn:'System upgrade for next year.', includesPt:'· Revolução completa\n· Missão do ciclo', includesEn:'· Full revolution\n· Cycle mission', brl:147.00, usd:37.00, stripeUrl:'https://buy.stripe.com/28E7sN8Pi4SI5Kld1p1ZS0j'},
-  {id:'15', pt:'Atualização Rev. Solar 27/28', en:'Solar Rev. 27/28 Update', descPt:'Preparação antecipada do seu próximo ciclo.', descEn:'Early cycle preparation.', includesPt:'· Revolução antecipada\n· Missão futura', includesEn:'· Early revolution\n· Future mission', brl:147.00, usd:37.00, stripeUrl:'https://buy.stripe.com/3cIdRb6Hacla7StbXl1ZS0k'},
-  {id:'16', pt:'DOSSIÊ TÁTICO 01GURU (God Mode)', en:'01GURU TACTICAL DOSSIER', descPt:'O arquivo definitivo. Todos os protocolos compilados.', descEn:'The ultimate blueprint. All protocols compiled.', includesPt:'· Todos os relatórios\n· Contato Direto Exclusivo', includesEn:'· All reports\n· Direct Exclusive Contact', brl:497.00, usd:97.00, stripeUrl:'https://buy.stripe.com/5kQ28t2qUetifkV4uT1ZS0l'},
-];
-
-const translations = {
-  PT:{
-    'tag-decodificacao':'O Processador de Consciência Coletiva',
-    'hero-title':'Dados não mentem.<br>Os astros também não.',
-    'hero-subtitle':'O fim do esoterismo passivo. Cruzamos suas coordenadas exatas de nascimento com os maiores algoritmos de timing do mundo para forjar rotas matemáticas de materialização e proteção.',
-    'cta-button':'[ INICIAR DIAGNÓSTICO ]',
-    'param-title':'A Engenharia dos Seus Parâmetros',
-    'param-name-title':'Nome Completo','param-name-desc':'O identificador vibratório primário. Codifica o Número de Expressão e Desejo da Alma. É a frequência exata da sua assinatura no mundo.',
-    'param-date-title':'Data de Nascimento','param-date-desc':'O Código Fonte. Define o Caminho da Vida (Life Path) e ancora matematicamente os ciclos decenais de materialização financeira e provações kármicas.',
-    'param-hour-title':'Hora Exata','param-hour-desc':'O portal de ativação. Calibra o Ascendente (ASC). Sem a hora exata, a precisão do seu Firewall Energético cai drasticamente, criando pontos cegos.',
-    'param-loc-title':'Cidade, Estado e País','param-loc-desc':'Coordenadas Geobiométricas. A posição planetária exata sobre o local de nascimento gera um Blueprint irreproduzível. Essencial para triangulação de trânsitos.',
-    'scan-title':'Teia Algorítmica',
-    'wg-title':'A Assinatura High-Touch',
-    'wg-text1':'Em um mercado global infectado pela automação barata, o 01GURU escolheu a exclusividade absoluta. Você não é atendido por um robô de disparo em massa.',
-    'wg-text2':'Os cálculos são forjados por inteligência artificial, mas <strong>todo Dossiê, Mapa ou Blueprint é auditado e entregue pessoalmente por mim.</strong> Eu chamo você no seu WhatsApp ou Telegram. Demore o tempo que for necessário para o alinhamento ficar perfeito.',
-    'genesis-title':'A Gênese do 01GURU',
-    'form-title':'Terminal de Inserção de Parâmetros',
-    'label-nome':'NOME COMPLETO DO ALVO','label-data':'DATA DE NASCIMENTO','label-hora':'HORA EXATA',
-    'label-pais':'PAÍS','label-estado':'ESTADO / UF','label-cidade':'CIDADE',
-    'label-protocolo':'SELECIONE O PROTOCOLO DE AUDITORIA',
-    'btn-submit':'[ EXECUTAR DECIFRAMENTO E ACESSAR CHECKOUT ]',
-    'link-privacy':'Política de Privacidade','link-cookies':'Política de Cookies','link-terms':'Termos de Uso','link-sub':'Gerenciar Cancelamento'
-  },
-  EN:{
-    'tag-decodificacao':'The Collective Consciousness Processor',
-    'hero-title':'Data doesn\'t lie.<br>Neither do the stars.',
-    'hero-subtitle':'The end of passive esoterism. We cross your exact birth coordinates with the world\'s greatest timing algorithms to forge mathematical routes of manifestation and protection.',
-    'cta-button':'[ START DIAGNOSTIC ]',
-    'param-title':'The Engineering of Your Parameters',
-    'param-name-title':'Full Name','param-name-desc':'The primary vibrational identifier. Encodes the Expression and Soul\'s Desire Number. It is the exact frequency of your world signature.',
-    'param-date-title':'Date of Birth','param-date-desc':'The Source Code. Defines the Life Path and mathematically anchors decennial cycles of financial materialization and karmic trials.',
-    'param-hour-title':'Exact Time','param-hour-desc':'The activation portal. Calibrates the Ascendant (ASC). Without the exact hour, the precision of your Energy Firewall drops drastically, creating blind spots.',
-    'param-loc-title':'City, State & Country','param-loc-desc':'Geobiometric Coordinates. The exact planetary position over your birth location generates an irreproducible Blueprint. Essential for transit triangulation.',
-    'scan-title':'Algorithmic Web',
-    'wg-title':'The High-Touch Signature',
-    'wg-text1':'In a global market infected by cheap automation, 01GURU chose absolute exclusivity. You are not served by a mass-firing robot.',
-    'wg-text2':'Calculations are forged by artificial intelligence, but <strong>every Dossier, Map, or Blueprint is audited and delivered personally by me.</strong> I contact you on your WhatsApp or Telegram. Take as long as necessary for the alignment to be perfect.',
-    'genesis-title':'The Genesis of 01GURU',
-    'form-title':'Parameter Insertion Terminal',
-    'label-nome':'FULL TARGET NAME','label-data':'DATE OF BIRTH','label-hora':'EXACT TIME',
-    'label-pais':'COUNTRY','label-estado':'STATE / PROVINCE','label-cidade':'CITY',
-    'label-protocolo':'SELECT AUDIT PROTOCOL',
-    'btn-submit':'[ EXECUTE DECODING & ACCESS CHECKOUT ]',
-    'link-privacy':'Privacy Policy','link-cookies':'Cookie Policy','link-terms':'Terms of Use','link-sub':'Manage Cancellation'
-  }
-};
-
-const usStates = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"];
-const countries = ["Brasil","United States","Portugal","Angola","Argentina","Canada","France","Germany","Italy","Japan","Mexico","Spain","United Kingdom"];
-
-function buildCountryDropdown() {
-  const sel = document.getElementById('pais');
-  sel.innerHTML = `<option value="">Selecione o País</option>`;
-  countries.sort().forEach(c => {
-    const opt = document.createElement('option');
-    opt.value = c; opt.textContent = c;
-    sel.appendChild(opt);
-  });
-  sel.addEventListener('change', onCountryChange);
-}
-
-function buildProtocolDropdown() {
-  const sel = document.getElementById('proto-select');
-  sel.innerHTML = currentLanguage === 'PT' ? '<option value="">-- Escolha o Protocolo --</option>' : '<option value="">-- Choose Protocol --</option>';
-  protocols.forEach(p => {
-    const opt = document.createElement('option');
-    opt.value = p.id; opt.textContent = currentLanguage === 'PT' ? p.pt : p.en;
-    sel.appendChild(opt);
-  });
-}
-
 function setLanguage(lang) {
-  currentLanguage = lang;
   document.querySelectorAll('.lang-btn').forEach(b => b.classList.toggle('active', b.textContent === lang));
-  const t = translations[lang];
-  for (const id in t) {
-    const el = document.getElementById(id);
-    if (el) { if(id==='hero-title'||id==='wg-text2') el.innerHTML=t[id]; else el.textContent=t[id]; }
-  }
-  buildProtocolDropdown();
-  const cur = document.getElementById('proto-select').value;
-  if (cur) showProtocolDetail(cur);
-  updateProtoPrice();
 }
 
-// LOCATION API MOCK (Simpler for rendering speed)
-async function onCountryChange() {
-  const val = document.getElementById('pais').value;
-  const estadoSel = document.getElementById('estado');
-  const cidadeSel = document.getElementById('cidade');
-  cidadeSel.innerHTML = '<option value="">Aguardando Estado...</option>'; cidadeSel.disabled = true;
-  
-  if (val === 'Brasil') {
-    setLanguage('PT');
-    estadoSel.innerHTML = '<option value="RS">Rio Grande do Sul (Exemplo)</option>';
-    estadoSel.disabled = false;
-    cidadeSel.innerHTML = '<option value="Porto Alegre">Porto Alegre (Exemplo)</option>';
-    cidadeSel.disabled = false;
-  } else {
-    if(val === 'United States') setLanguage('EN');
-    estadoSel.innerHTML = '<option value="N/A">Estado/State</option>';
-    estadoSel.disabled = false;
-    cidadeSel.innerHTML = '<option value="N/A">Cidade/City</option>';
-    cidadeSel.disabled = false;
-  }
-  updateProtoPrice();
-}
-
-function showProtocolDetail(id) {
-  document.getElementById('protocolo-hidden').value = id;
+function showProtocolDetail(val) {
+  document.getElementById('protocolo-hidden').value = val;
   const detail = document.getElementById('proto-detail');
-  if (!id) { detail.style.display = 'none'; return; }
-  const p = protocols.find(x => x.id === id);
-  const isBR = document.getElementById('pais').value === 'Brasil';
-  const lang = currentLanguage;
-  document.getElementById('pd-title').textContent = lang === 'PT' ? p.pt : p.en;
-  document.getElementById('pd-desc').textContent = lang === 'PT' ? p.descPt : p.descEn;
-  document.getElementById('pd-includes').textContent = lang === 'PT' ? p.includesPt : p.includesEn;
+  if(!val){ detail.style.display = 'none'; return; }
   detail.style.display = 'block';
-  detail.className = id === '16' ? 'featured-god' : '';
-  
-  document.getElementById('partner-fields').style.display = id === '4' ? 'block' : 'none';
-  renderPrice(p, isBR, lang);
+  if(val==='1') { document.getElementById('pd-title').innerText = 'Briefing Diário'; document.getElementById('pd-price').innerText = 'R$ 19,90'; }
+  if(val==='4') { document.getElementById('pd-title').innerText = 'Sinastria'; document.getElementById('pd-price').innerText = 'R$ 97,00'; }
+  if(val==='16') { document.getElementById('pd-title').innerText = 'Dossiê God Mode'; document.getElementById('pd-price').innerText = 'R$ 497,00'; }
 }
 
-function renderPrice(p, isBR, lang) {
-  const main = document.getElementById('pd-price');
-  const sub = document.getElementById('pd-price-sub');
-  if (lang === 'PT') {
-    main.textContent = `12x de ${(p.brl / 12).toLocaleString('pt-BR', {style:'currency', currency:'BRL'})}`;
-    sub.textContent = `ou ${p.brl.toLocaleString('pt-BR', {style:'currency', currency:'BRL'})} à vista`;
-  } else {
-    main.textContent = `$ ${p.usd.toFixed(2)} USD`;
-    sub.textContent = 'One-time payment';
-  }
-}
-function updateProtoPrice() {
-  const id = document.getElementById('proto-select').value;
-  if(id) showProtocolDetail(id);
-}
-
-// SIMULATED BIOCRITICAL SCANNER & SPIDER GRAPH LOGIC
-function getNumerology(str) {
-    if (!str) return 1;
-    const table = { a: 1, b: 2, c: 3, d: 4, e: 5, f: 6, g: 7, h: 8, i: 9, j: 1, k: 2, l: 3, m: 4, n: 5, o: 6, p: 7, q: 8, r: 9, s: 1, t: 2, u: 3, v: 4, w: 5, x: 6, y: 7, z: 8 };
-    let sum = str.toLowerCase().replace(/[^a-z]/g, '').split('').reduce((a, b) => a + (table[b] || 0), 0);
-    while (sum > 9) sum = sum.toString().split('').reduce((a, b) => a + parseInt(b), 0);
-    return sum || 1;
-}
-
-function getLifePath(dateStr) {
-    if (!dateStr) return 1;
-    let sum = dateStr.replace(/\D/g, '').split('').reduce((a, b) => a + parseInt(b), 0);
-    while (sum > 9) sum = sum.toString().split('').reduce((a, b) => a + parseInt(b), 0);
-    return sum || 1;
-}
-
-function updateSpiderGraph() {
+// LÓGICA DE ANIMAÇÃO DA TEIA (RADAR CHART)
+function animarTeia() {
     const nome = document.getElementById('nome').value;
     const data = document.getElementById('dataNascimento').value;
-    const status = document.getElementById('scan-status');
     const polygon = document.getElementById('radar-data');
-    
-    // Calculate simulated numerology points (Scale 1-9)
-    const expression = getNumerology(nome);
-    const lifePath = getLifePath(data);
-    const soulValue = nome ? ((expression + 3) % 9) || 1 : 1;
-    const karmicValue = data ? ((lifePath + expression) % 9) || 1 : 1;
-    const wealthValue = nome ? ((getNumerology(nome[0]) + lifePath) % 9) || 1 : 1;
-    const vectorValue = nome ? ((expression * lifePath) % 9) || 1 : 1;
+    const status = document.getElementById('scan-status');
 
-    // Wait for full input to activate
-    if (nome && data) {
-        status.textContent = currentLanguage === 'PT' ? 'DADOS CAPTURADOS. GERANDO TEIA...' : 'DATA CAPTURED. GENERATING WEB...';
-        status.style.color = 'var(--mint)';
-        
-        // Define coordinates based on standard SVG radar (radius 40, centered at 50,50)
-        const angles = [0, 60, 120, 180, 240, 300]; // 6 axes
-        const values = [expression, soulValue, karmicValue, lifePath, wealthValue, vectorValue]; // scaled 1-9
-        
-        // Map 1-9 scale to SVG points
-        const points = angles.map((angle, i) => {
-            const rad = (angle - 90) * (Math.PI / 180);
-            const radius = (values[i] / 9) * 40; // Scale 9 up to max radius 40
-            const x = 50 + radius * Math.cos(rad);
-            const y = 50 + radius * Math.sin(rad);
-            return `${x.toFixed(1)},${y.toFixed(1)}`;
-        }).join(' ');
-        
-        polygon.setAttribute('points', points);
-
-    } else {
-        status.textContent = currentLanguage === 'PT' ? 'Aguardando Input...' : 'Awaiting Input...';
-        status.style.color = 'var(--gold)';
-        // Reset to center
+    if (!nome && !data) {
         polygon.setAttribute('points', '50,50 50,50 50,50 50,50 50,50 50,50');
+        status.innerText = "Aguardando Input...";
+        status.style.color = "var(--gold)";
+        return;
     }
+
+    status.innerText = "Decodificando Frequência...";
+    status.style.color = "var(--mint)";
+
+    // Simulação determinística baseada no que o usuário digita
+    let v1 = nome.length > 0 ? (nome.length * 4) % 30 + 10 : 10;
+    let v2 = data ? parseInt(data.slice(-2)) % 30 + 10 : 10;
+    let v3 = nome.length > 2 ? (nome.charCodeAt(0) * 2) % 30 + 10 : 10;
+    let v4 = data ? parseInt(data.slice(5,7)) * 3 % 30 + 10 : 10;
+    let v5 = nome.length > 4 ? (nome.charCodeAt(nome.length-1) * 3) % 30 + 10 : 10;
+    let v6 = (v1 + v2) % 30 + 10;
+
+    const vals = [v1, Math.max(10, v2), v3, v4, v5, v6];
+    const angles = [0, 60, 120, 180, 240, 300];
+
+    const points = angles.map((angle, i) => {
+        const rad = (angle - 90) * (Math.PI / 180);
+        const x = 50 + vals[i] * Math.cos(rad);
+        const y = 50 + vals[i] * Math.sin(rad);
+        return `${x.toFixed(1)},${y.toFixed(1)}`;
+    }).join(' ');
+
+    polygon.setAttribute('points', points);
 }
 
-// STRIPE SUBMIT HANDLER
 document.getElementById('dossie-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const protoId = document.getElementById('protocolo-hidden').value;
-  if (!protoId) { alert(currentLanguage === 'PT' ? 'Selecione um protocolo.' : 'Select a protocol.'); return; }
+  if(!protoId) { alert('Selecione um protocolo'); return; }
   
-  const formData = {
-    nome: document.getElementById('nome').value,
-    dataNascimento: document.getElementById('dataNascimento').value,
-    horaNascimento: document.getElementById('horaNascimento').value,
-    cidade: document.getElementById('cidade').value,
-    estado: document.getElementById('estado').value,
-    pais: document.getElementById('pais').value,
-    protocolo: protoId
-  };
+  document.getElementById('loading-overlay').style.display = 'flex';
   
-  if (!formData.nome || !formData.dataNascimento) {
-    alert(currentLanguage === 'PT' ? 'Preencha os parâmetros.' : 'Fill parameters.'); return;
-  }
-  
-  const p = protocols.find(x => x.id === protoId);
-  const stripeLink = p.stripeUrl;
-  
-  // UX Loading
-  document.getElementById('loading-overlay').classList.remove('hidden');
-  
-  // Redireciona para o Stripe para finalizar a venda
-  setTimeout(() => {
-    window.location.href = stripeLink;
-  }, 1000);
-});
+  let link = 'https://buy.stripe.com/5kQ28t2qUetifkV4uT1ZS0l'; // Exemplo genérico
+  if(protoId === '1') link = 'https://buy.stripe.com/9B628t1mQ1Gw0q1e5t1ZS0n';
+  if(protoId === '4') link = 'https://buy.stripe.com/8x2bJ35D62KA7St8L91ZS09';
+  if(protoId === '16') link = 'https://buy.stripe.com/5kQ28t2qUetifkV4uT1ZS0l';
 
-window.onload = () => {
-  setLanguage('PT');
-  buildCountryDropdown();
-  buildProtocolDropdown();
-};
+  setTimeout(() => { window.location.href = link; }, 1000);
+});
 </script>
 </body>
 </html>
